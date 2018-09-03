@@ -1,0 +1,882 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="561b81cd-a511-40c0-845b-cc44f5e32733" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exercise-1/dbscan.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exercise-1/kmeans.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exercise-1/utils_plot.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exercise-1/winqt4.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exercise-1/winqt5.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/catkin_ws/src/scripts/junk.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/catkin_ws/src/scripts/segmentation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise-1/RANSAC.py" beforeDir="false" afterPath="$PROJECT_DIR$/Exercise-1/RANSAC.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise-1/tabletop.pcd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/.flake8.cython" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/.pep8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/.travis.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/conf.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/ProjectInliers.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/ProjectInliers.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/_bind_defs.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/_pcl.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/_pcl.pyx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/_pcl_172.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/_pcl_172.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/_pcl_172.pyx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/_pcl_180.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/_pcl_180.pyx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/_pcl_190.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/_pcl_190.pyx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/bind.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/bind.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/boost_function.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/boost_shared_ptr.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/boost_shared_ptr_assign.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/boost_signal2_connection.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/eigen.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/grabber_callback.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/grabber_callback.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/grabber_callback.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/indexing.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/indexing.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/minipcl.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/minipcl.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_PCLPointCloud2_defs.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_PCLPointCloud2_defs_172.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_PCLPointCloud2_defs_180.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_PCLPointCloud2_defs_190.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_People_defs.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_People_defs_172.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_People_defs_180.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_People_defs_190.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_Recognition_defs.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_Recognition_defs_172.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_Recognition_defs_180.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_Recognition_defs_190.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_base_172.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_common.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_common_172.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_compression_172.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_defs.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_features_defs.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_features_defs_172.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_features_defs_180.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_features_defs_190.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_filters_defs.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_filters_defs_172.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_filters_defs_180.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_filters_defs_190.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_grabber.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_grabber_172.pyx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_grabber_180.pyx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_grabber_190.pyx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_grabber_defs.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_grabber_defs_172.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_grabber_defs_180.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_grabber_defs_190.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_io_defs.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_io_defs_172.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_io_defs_180.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_io_defs_190.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_kdtree_defs.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_kdtree_defs_172.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_kdtree_defs_180.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_kdtree_defs_190.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_keypoints_defs.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_keypoints_defs_172.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_keypoints_defs_180.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_keypoints_defs_190.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_octree_defs.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_octree_defs_172.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_octree_defs_180.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_octree_defs_190.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_outofcore_defs.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_outofcore_defs_172.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_outofcore_defs_180.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_outofcore_defs_190.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_range_image_defs.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_range_image_defs_172.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_range_image_defs_180.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_range_image_defs_190.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_registration_defs.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_registration_defs_172.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_registration_defs_180.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_registration_defs_190.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_ros_defs.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_ros_defs_172.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_ros_defs_180.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_ros_defs_190.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_sample_consensus_defs.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_sample_consensus_defs_172.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_sample_consensus_defs_180.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_sample_consensus_defs_190.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_search_defs.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_search_defs_172.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_search_defs_180.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_search_defs_190.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_segmentation_defs.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_segmentation_defs_172.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_segmentation_defs_180.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_segmentation_defs_190.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_surface_defs.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_surface_defs_172.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_surface_defs_180.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_surface_defs_190.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_tracking_defs.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_tracking_defs_172.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_tracking_defs_180.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_tracking_defs_190.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_visualization.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_visualization.pyx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_visualization_defs.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_visualization_defs_172.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_visualization_defs_180.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pcl_visualization_defs_190.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Common/Common.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Common/RangeImage/RangeImagePlanar_172.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Common/RangeImage/RangeImages_172.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Common/RangeImage/RangeImages_180.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Features/AddList.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Features/DifferenceOfNormalsEstimation_172.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Features/DifferenceOfNormalsEstimation_180.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Features/DifferenceOfNormalsEstimation_190.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Features/IntegralImageNormalEstimation_172.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Features/IntegralImageNormalEstimation_180.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Features/IntegralImageNormalEstimation_190.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Features/MomentOfInertiaEstimation_172.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Features/MomentOfInertiaEstimation_180.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Features/MomentOfInertiaEstimation_190.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Features/NormalEstimation_172.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Features/NormalEstimation_180.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Features/NormalEstimation_190.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Features/RangeImageBorderExtractor_172.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Features/RangeImageBorderExtractor_180.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Features/RangeImageBorderExtractor_190.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Features/VFHEstimation_172.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Features/VFHEstimation_180.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Features/VFHEstimation_190.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Filters/AddList.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Filters/ApproximateVoxelGrid.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Filters/ApproximateVoxelGrid_172.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Filters/ApproximateVoxelGrid_180.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Filters/ApproximateVoxelGrid_190.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Filters/ConditionAnd.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Filters/ConditionAnd_172.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Filters/ConditionAnd_180.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Filters/ConditionAnd_190.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Filters/ConditionalRemoval.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Filters/ConditionalRemoval_172.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Filters/ConditionalRemoval_180.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Filters/ConditionalRemoval_190.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Filters/CropBox.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Filters/CropBox_172.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Filters/CropBox_180.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Filters/CropBox_190.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Filters/CropHull.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Filters/CropHull_172.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Filters/CropHull_180.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Filters/CropHull_190.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Filters/FieldComparison.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Filters/FieldComparison_172.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Filters/FieldComparison_180.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Filters/FieldComparison_190.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Filters/PassThroughFilter.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Filters/PassThroughFilter_172.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Filters/PassThroughFilter_180.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Filters/PassThroughFilter_190.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Filters/ProjectInliers.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Filters/ProjectInliers_172.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Filters/ProjectInliers_180.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Filters/ProjectInliers_190.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Filters/RadiusOutlierRemoval.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Filters/RadiusOutlierRemoval_172.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Filters/RadiusOutlierRemoval_180.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Filters/RadiusOutlierRemoval_190.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Filters/StatisticalOutlierRemovalFilter.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Filters/StatisticalOutlierRemovalFilter_172.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Filters/StatisticalOutlierRemovalFilter_180.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Filters/StatisticalOutlierRemovalFilter_190.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Filters/VoxelGridFilter.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Filters/VoxelGridFilter_172.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Filters/VoxelGridFilter_180.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Filters/VoxelGridFilter_190.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Grabber/AddList.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Grabber/ONIGrabber.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Grabber/OpenNIGrabber.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Grabber/PyGrabberCallback.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Grabber/PyGrabberNode.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Grabber/SimpleNIGrabber.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/IO/AddList.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/KdTree/AddList.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/KdTree/KdTree.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/KdTree/KdTree_FLANN.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/KeyPoint/AddList.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/KeyPoint/HarrisKeypoint3D.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/KeyPoint/HarrisKeypoint3D_172.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/KeyPoint/HarrisKeypoint3D_180.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/KeyPoint/HarrisKeypoint3D_190.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/KeyPoint/NarfKeypoint.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/KeyPoint/NarfKeypoint_172.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/KeyPoint/NarfKeypoint_180.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/KeyPoint/NarfKeypoint_190.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/KeyPoint/UniformSampling.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/KeyPoint/UniformSampling_172.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/KeyPoint/UniformSampling_180.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/KeyPoint/UniformSampling_190.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Octree/AddList.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Octree/Octree2BufBase.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Octree/OctreePointCloud.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Octree/OctreePointCloud2Buf.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Octree/OctreePointCloud2Buf_172.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Octree/OctreePointCloud2Buf_180.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Octree/OctreePointCloud2Buf_190.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Octree/OctreePointCloudChangeDetector.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Octree/OctreePointCloudChangeDetector_172.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Octree/OctreePointCloudChangeDetector_180.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Octree/OctreePointCloudChangeDetector_190.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Octree/OctreePointCloudSearch.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Octree/OctreePointCloudSearch_172.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Octree/OctreePointCloudSearch_180.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Octree/OctreePointCloudSearch_190.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Octree/OctreePointCloud_172.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Octree/OctreePointCloud_180.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Octree/OctreePointCloud_190.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/PointCloud_FPFHSignature33.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/PointCloud_Normal.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/PointCloud_PCLPointCloud2.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/PointCloud_PCLPointCloud2_180.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/PointCloud_PointCloud2.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/PointCloud_PointNormal.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/PointCloud_PointWithViewpoint.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/PointCloud_PointXYZ.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/PointCloud_PointXYZI.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/PointCloud_PointXYZI_172.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/PointCloud_PointXYZI_180.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/PointCloud_PointXYZI_190.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/PointCloud_PointXYZRGB.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/PointCloud_PointXYZRGBA.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/PointCloud_PointXYZRGBA_172.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/PointCloud_PointXYZRGBA_180.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/PointCloud_PointXYZRGBA_190.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/PointCloud_PointXYZRGB_172.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/PointCloud_PointXYZRGB_180.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/PointCloud_PointXYZRGB_190.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/PointCloud_PointXYZ_172.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/PointCloud_PointXYZ_180.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/PointCloud_PointXYZ_190.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/PointCloud_ReferenceFrame.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/PointCloud_SHOT352.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/PointCloud_SensorPoint.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/PointCloud_VFHSignature308.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/PointXYZtoPointXYZ.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/SampleConsensus/RandomSampleConsensus.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/SampleConsensus/RandomSampleConsensus_172.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/SampleConsensus/RandomSampleConsensus_180.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/SampleConsensus/RandomSampleConsensus_190.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/SampleConsensus/SampleConsensusModel.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/SampleConsensus/SampleConsensusModelCylinder.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/SampleConsensus/SampleConsensusModelCylinder_172.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/SampleConsensus/SampleConsensusModelCylinder_180.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/SampleConsensus/SampleConsensusModelCylinder_190.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/SampleConsensus/SampleConsensusModelLine.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/SampleConsensus/SampleConsensusModelLine_172.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/SampleConsensus/SampleConsensusModelLine_180.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/SampleConsensus/SampleConsensusModelLine_190.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/SampleConsensus/SampleConsensusModelPlane.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/SampleConsensus/SampleConsensusModelPlane_172.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/SampleConsensus/SampleConsensusModelPlane_180.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/SampleConsensus/SampleConsensusModelPlane_190.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/SampleConsensus/SampleConsensusModelRegistration.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/SampleConsensus/SampleConsensusModelRegistration_172.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/SampleConsensus/SampleConsensusModelRegistration_180.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/SampleConsensus/SampleConsensusModelRegistration_190.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/SampleConsensus/SampleConsensusModelSphere.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/SampleConsensus/SampleConsensusModelSphere_172.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/SampleConsensus/SampleConsensusModelSphere_180.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/SampleConsensus/SampleConsensusModelSphere_190.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/SampleConsensus/SampleConsensusModelStick.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/SampleConsensus/SampleConsensusModelStick_172.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/SampleConsensus/SampleConsensusModelStick_180.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/SampleConsensus/SampleConsensusModelStick_190.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/SampleConsensus/SampleConsensusModel_172.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/SampleConsensus/SampleConsensusModel_180.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/SampleConsensus/SampleConsensusModel_190.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Segmentation/AddList.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Segmentation/ConditionalEuclideanClustering.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Segmentation/ConditionalEuclideanClustering_172.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Segmentation/ConditionalEuclideanClustering_180.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Segmentation/ConditionalEuclideanClustering_190.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Segmentation/EuclideanClusterExtraction.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Segmentation/EuclideanClusterExtraction_172.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Segmentation/EuclideanClusterExtraction_180.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Segmentation/EuclideanClusterExtraction_190.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Segmentation/MinCutSegmentation.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Segmentation/MinCutSegmentation_172.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Segmentation/MinCutSegmentation_180.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Segmentation/MinCutSegmentation_190.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Segmentation/ProgressiveMorphologicalFilter_172.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Segmentation/ProgressiveMorphologicalFilter_180.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Segmentation/ProgressiveMorphologicalFilter_190.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Segmentation/Segmentation.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Segmentation/SegmentationNormal.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Segmentation/SegmentationNormal_172.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Segmentation/SegmentationNormal_180.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Segmentation/SegmentationNormal_190.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Segmentation/Segmentation_172.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Segmentation/Segmentation_180.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Surface/AddList.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Surface/ConcaveHull.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Surface/ConcaveHull_172.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Surface/ConcaveHull_180.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Surface/ConcaveHull_190.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Surface/MovingLeastSquares.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Surface/MovingLeastSquares_172.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Surface/MovingLeastSquares_180.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Surface/MovingLeastSquares_190.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Tracking/AddList.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Vertices.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Visualization/AddList.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Visualization/CloudViewing.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Visualization/Handler/PointCloudColorHandleringCustom.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Visualization/Handler/PointCloudColorHandleringGenericField.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Visualization/Handler/PointCloudColorHandleringHSVField.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Visualization/Handler/PointCloudColorHandleringRGBField.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Visualization/Handler/PointCloudColorHandleringRandom.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Visualization/Handler/PointCloudGeometryHandleringCustom.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Visualization/Handler/PointCloudGeometryHandleringSurfaceNormal.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Visualization/Handler/PointCloudGeometryHandleringXYZ.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Visualization/PCLHistogramViewing.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Visualization/PCLVisualizering.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/Visualization/RangeImageVisualization.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/pxiInclude.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/pxiInclude_172.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/pxiInclude_180.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/pxiInclude_190.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/registration/AddList.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/registration/GeneralizedIterativeClosestPoint.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/registration/GeneralizedIterativeClosestPoint_172.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/registration/GeneralizedIterativeClosestPoint_180.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/registration/GeneralizedIterativeClosestPoint_190.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/registration/IterativeClosestPoint.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/registration/IterativeClosestPointNonLinear.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/registration/IterativeClosestPointNonLinear_172.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/registration/IterativeClosestPointNonLinear_180.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/registration/IterativeClosestPointNonLinear_190.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/registration/IterativeClosestPoint_172.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/registration/IterativeClosestPoint_180.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/registration/IterativeClosestPoint_190.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/registration/NormalDistributionsTransform_172.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/registration/NormalDistributionsTransform_180.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/pxi/registration/NormalDistributionsTransform_190.pxi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/registration.pyx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/shared_ptr.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/shared_ptr_assign.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl/vector.pxd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pcl_logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pkg-config/Install-GTKPlus.ps1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pkg-config/PS-Zip.psm1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/pkg-config/pkg-config_setting.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/readme.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/setup.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-pcl/sys_path_check.py" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="846354917">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.14" value="1" />
+          <entry key="project.opened" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="Python Console" value="15" />
+          <entry key="dummy" value="88" />
+          <entry key="py" value="2187" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="PLAIN_TEXT" value="88" />
+          <entry key="Python" value="2202" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="py" value="10" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Python" value="10" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/catkin_ws/src/scripts/segmentation.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="646">
+              <caret line="50" column="15" lean-forward="true" selection-start-line="50" selection-start-column="15" selection-end-line="50" selection-end-column="15" />
+              <folding>
+                <element signature="e#40#60#0" expanded="true" />
+                <marker date="1535992804429" expanded="true" signature="738:1053" ph="..." />
+                <marker date="1535992804429" expanded="true" signature="2013:2751" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Exercise-1/RANSAC.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="84" lean-forward="true" selection-start-line="84" selection-end-line="84" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+                <marker date="1535992804437" expanded="true" signature="2562:2563" ph="..." />
+                <marker date="1535992804437" expanded="true" signature="3277:3659" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Exercise-1/kmeans.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Exercise-1/utils_plot.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="18">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Exercise-1/dbscan.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="324">
+              <caret line="18" column="19" lean-forward="true" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/catkin_ws/src/scripts/junk.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>XYZRGB</find>
+      <find>XYZ</find>
+      <find>clusters_</find>
+      <find>pclP</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>PC</replace>
+      <replace>P</replace>
+      <replace>testClusters</replace>
+      <replace>pclp</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Exercise-1/qtthread.py" />
+        <option value="$PROJECT_DIR$/Exercise-1/winqt5.py" />
+        <option value="$PROJECT_DIR$/Exercise-1/winqt4.py" />
+        <option value="$PROJECT_DIR$/Exercise-1/utils_plot.py" />
+        <option value="$PROJECT_DIR$/Exercise-1/kmeans.py" />
+        <option value="$PROJECT_DIR$/catkin_ws/src/scripts/junk.py" />
+        <option value="$PROJECT_DIR$/catkin_ws/src/scripts/segmentation.py" />
+        <option value="$PROJECT_DIR$/Exercise-1/RANSAC.py" />
+        <option value="$PROJECT_DIR$/Exercise-1/dbscan.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="3599" />
+    <option name="y" value="42" />
+    <option name="width" value="2161" />
+    <option name="height" value="1850" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="RoboND-Perception-Exercises" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RoboND-Perception-Exercises" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RoboND-Perception-Exercises" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RoboND-Perception-Exercises" type="462c0819:PsiDirectoryNode" />
+              <item name="catkin_ws" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RoboND-Perception-Exercises" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RoboND-Perception-Exercises" type="462c0819:PsiDirectoryNode" />
+              <item name="catkin_ws" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RoboND-Perception-Exercises" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RoboND-Perception-Exercises" type="462c0819:PsiDirectoryNode" />
+              <item name="catkin_ws" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RoboND-Perception-Exercises" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RoboND-Perception-Exercises" type="462c0819:PsiDirectoryNode" />
+              <item name="Exercise-1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RoboND-Perception-Exercises" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RoboND-Perception-Exercises" type="462c0819:PsiDirectoryNode" />
+              <item name="Exercise-2" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/catkin_ws/src/scripts/segmentation.py" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.RANSAC">
+    <configuration name="RANSAC" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="RoboND-Perception-Exercises" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/usr/bin/python2.7" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Exercise-1" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="false" />
+      <option name="ADD_SOURCE_ROOTS" value="false" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Exercise-1/RANSAC.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="WinQT4" type="PythonConfigurationType" factoryName="Python">
+      <module name="RoboND-Perception-Exercises" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Exercise-1" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="false" />
+      <option name="ADD_SOURCE_ROOTS" value="false" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Exercise-1/winqt4.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="WinQT5" type="PythonConfigurationType" factoryName="Python">
+      <module name="RoboND-Perception-Exercises" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Exercise-1" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="false" />
+      <option name="ADD_SOURCE_ROOTS" value="false" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Exercise-1/winqt5.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="RoboND-Perception-Exercises" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/usr/bin/python2.7" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="false" />
+      <option name="ADD_SOURCE_ROOTS" value="false" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="kmeans" type="PythonConfigurationType" factoryName="Python">
+      <module name="RoboND-Perception-Exercises" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Exercise-1" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="false" />
+      <option name="ADD_SOURCE_ROOTS" value="false" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Exercise-1/kmeans.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="segmentation" type="PythonConfigurationType" factoryName="Python">
+      <module name="RoboND-Perception-Exercises" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/catkin_ws/src/scripts" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="false" />
+      <option name="ADD_SOURCE_ROOTS" value="false" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/catkin_ws/src/scripts/segmentation.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.WinQT4" />
+      <item itemvalue="Python.WinQT5" />
+      <item itemvalue="Python.kmeans" />
+      <item itemvalue="Python.segmentation" />
+      <item itemvalue="Python.RANSAC" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.RANSAC" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="561b81cd-a511-40c0-845b-cc44f5e32733" name="Default Changelist" comment="" />
+      <created>1535773580384</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1535773580384</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="3599" y="42" width="2161" height="1850" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2009434" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3299279" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.20853366" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39903846" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3299279" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.17848557" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file:///usr/lib/python2.7/lib-tk/Tkinter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="738">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Exercise-1/utils_plot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Exercise-1/kmeans.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/catkin_ws/src/scripts/junk.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Exercise-1/winqt4.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2034">
+          <caret line="113" column="8" selection-start-line="113" selection-start-column="8" selection-end-line="113" selection-end-column="8" />
+          <folding>
+            <element signature="e#45#58#0" expanded="true" />
+            <marker date="1535934247970" expanded="true" signature="2081:2269" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Exercise-1/winqt5.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="538">
+          <caret line="49" column="72" selection-start-line="49" selection-start-column="72" selection-end-line="49" selection-end-column="72" />
+          <folding>
+            <element signature="e#45#58#0" expanded="true" />
+            <marker date="1535821791443" expanded="true" signature="2154:2345" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/catkin_ws/src/scripts/pcl_helper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="38" column="14" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="14" />
+          <folding>
+            <element signature="e#228#240#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Exercise-1/dbscan.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="18" column="19" lean-forward="true" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Exercise-1/RANSAC.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="84" lean-forward="true" selection-start-line="84" selection-end-line="84" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+            <marker date="1535992804437" expanded="true" signature="2562:2563" ph="..." />
+            <marker date="1535992804437" expanded="true" signature="3277:3659" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/catkin_ws/src/scripts/segmentation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="50" column="15" lean-forward="true" selection-start-line="50" selection-start-column="15" selection-end-line="50" selection-end-column="15" />
+          <folding>
+            <element signature="e#40#60#0" expanded="true" />
+            <marker date="1535992804429" expanded="true" signature="738:1053" ph="..." />
+            <marker date="1535992804429" expanded="true" signature="2013:2751" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
