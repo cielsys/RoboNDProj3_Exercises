@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="561b81cd-a511-40c0-845b-cc44f5e32733" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/imagerecognition.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catkin_ws/src/config/perception.rviz" beforeDir="false" afterPath="$PROJECT_DIR$/catkin_ws/src/config/perception.rviz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catkin_ws/roslaunchdelayed.bash" beforeDir="false" afterPath="$PROJECT_DIR$/catkin_ws/roslaunchdelayed.bash" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/catkin_ws/src/scripts/pclproc.py" beforeDir="false" afterPath="$PROJECT_DIR$/catkin_ws/src/scripts/pclproc.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/catkin_ws/src/scripts/segmentation.py" beforeDir="false" afterPath="$PROJECT_DIR$/catkin_ws/src/scripts/segmentation.py" afterDir="false" />
     </list>
@@ -26,24 +28,24 @@
         <counts>
           <entry key="Python Console" value="15" />
           <entry key="dummy" value="90" />
-          <entry key="py" value="3859" />
+          <entry key="py" value="3914" />
           <entry key="txt" value="48" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="138" />
-          <entry key="Python" value="3874" />
+          <entry key="Python" value="3929" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="15" />
+          <entry key="py" value="25" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="15" />
+          <entry key="Python" value="25" />
         </counts>
       </usages-collector>
     </session>
@@ -51,49 +53,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/catkin_ws/src/scripts/segmentation.py">
+        <entry file="file://$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/segmentation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="10" column="36" lean-forward="true" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
-              <folding>
-                <marker date="1536090284168" expanded="true" signature="1087:1947" ph="..." />
-                <marker date="1536090284168" expanded="true" signature="2027:2504" ph="..." />
-                <marker date="1536090284168" expanded="true" signature="2699:2944" ph="..." />
-                <marker date="1536090284168" expanded="true" signature="3359:4170" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/catkin_ws/src/scripts/pclproc.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="738">
-              <caret line="167" column="68" lean-forward="true" selection-start-line="167" selection-start-column="68" selection-end-line="167" selection-end-column="68" />
-              <folding>
-                <element signature="e#0#17#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/catkin_ws/src/scripts/pcl_helper.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="58" column="14" selection-start-line="58" selection-start-column="4" selection-end-line="58" selection-end-column="14" />
-              <folding>
-                <element signature="e#228#240#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/catkin_ws/src/scripts/junk.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="8" selection-start-line="7" selection-end-line="8" />
+            <state relative-caret-position="180">
+              <caret line="10" column="36" lean-forward="true" selection-end-line="10" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -101,31 +64,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Exercise-1/kmeans.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="1" />
+            <state relative-caret-position="234">
+              <caret line="13" column="10" lean-forward="true" selection-start-line="2" selection-end-line="13" selection-end-column="10" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Exercise-1/dbscan.py">
+        <entry file="file://$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/pclproc.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="2" selection-end-line="2" />
+            <state relative-caret-position="90">
+              <caret line="5" column="10" lean-forward="true" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Exercise-1/RANSAC.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/imagerecognition.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="252">
-              <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-                <marker date="1536019904650" expanded="true" signature="2329:2330" ph="..." />
-                <marker date="1536019904650" expanded="true" signature="3037:3418" ph="..." />
-              </folding>
+              <caret line="14" column="9" lean-forward="true" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -146,8 +104,8 @@
       <find>pclP</find>
       <find>clusters_</find>
       <find>core_samples_mask</find>
-      <find>labels</find>
       <find>v</find>
+      <find>labels</find>
     </findStrings>
     <replaceStrings>
       <replace>PC</replace>
@@ -173,6 +131,8 @@
         <option value="$PROJECT_DIR$/catkin_ws/src/scripts/junk.py" />
         <option value="$PROJECT_DIR$/catkin_ws/src/scripts/segmentation.py" />
         <option value="$PROJECT_DIR$/catkin_ws/src/scripts/pclproc.py" />
+        <option value="$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/pclproc.py" />
+        <option value="$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/imagerecognition.py" />
       </list>
     </option>
   </component>
@@ -198,38 +158,33 @@
             <path>
               <item name="RoboND-Perception-Exercises" type="b2602c69:ProjectViewProjectNode" />
               <item name="RoboND-Perception-Exercises" type="462c0819:PsiDirectoryNode" />
-              <item name="catkin_ws" type="462c0819:PsiDirectoryNode" />
+              <item name="catkin_ws3" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="RoboND-Perception-Exercises" type="b2602c69:ProjectViewProjectNode" />
               <item name="RoboND-Perception-Exercises" type="462c0819:PsiDirectoryNode" />
-              <item name="catkin_ws" type="462c0819:PsiDirectoryNode" />
+              <item name="catkin_ws3" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="RoboND-Perception-Exercises" type="b2602c69:ProjectViewProjectNode" />
               <item name="RoboND-Perception-Exercises" type="462c0819:PsiDirectoryNode" />
-              <item name="catkin_ws" type="462c0819:PsiDirectoryNode" />
+              <item name="catkin_ws3" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="sensor_stick" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RoboND-Perception-Exercises" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RoboND-Perception-Exercises" type="462c0819:PsiDirectoryNode" />
+              <item name="catkin_ws3" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="sensor_stick" type="462c0819:PsiDirectoryNode" />
               <item name="scripts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RoboND-Perception-Exercises" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RoboND-Perception-Exercises" type="462c0819:PsiDirectoryNode" />
-              <item name="catkin_ws" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="scripts" type="462c0819:PsiDirectoryNode" />
-              <item name="Assets" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="RoboND-Perception-Exercises" type="b2602c69:ProjectViewProjectNode" />
               <item name="RoboND-Perception-Exercises" type="462c0819:PsiDirectoryNode" />
               <item name="Exercise-1" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RoboND-Perception-Exercises" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RoboND-Perception-Exercises" type="462c0819:PsiDirectoryNode" />
-              <item name="Exercise-2" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -238,7 +193,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/catkin_ws/src/scripts/segmentation.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/pclproc.py" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -393,11 +348,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/catkin_ws/src/scripts/" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="false" />
       <option name="ADD_SOURCE_ROOTS" value="false" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/catkin_ws/src/scripts/pclproc.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/pclproc.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -414,11 +369,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/catkin_ws/src/scripts" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="false" />
       <option name="ADD_SOURCE_ROOTS" value="false" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/catkin_ws/src/scripts/segmentation.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/segmentation.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -467,12 +422,12 @@
     <frame x="3599" y="0" width="2161" height="1850" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2009434" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2009434" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3299279" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.20853366" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.20853366" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39903846" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -534,41 +489,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Exercise-1/kmeans.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Exercise-1/dbscan.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pythonutils/utils_plot.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/catkin_ws/src/scripts/pcl_helper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="58" column="14" selection-start-line="58" selection-start-column="4" selection-end-line="58" selection-end-column="14" />
-          <folding>
-            <element signature="e#228#240#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/catkin_ws/src/scripts/junk.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" selection-start-line="7" selection-end-line="8" />
         </state>
       </provider>
     </entry>
@@ -584,26 +508,75 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/catkin_ws/src/scripts/segmentation.py">
+    <entry file="file://$PROJECT_DIR$/Exercise-1/dbscan.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="10" column="36" lean-forward="true" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
+        <state relative-caret-position="36">
+          <caret line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/catkin_ws/src/scripts/junk.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" selection-start-line="7" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/catkin_ws/src/scripts/pcl_helper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="70" column="28" selection-start-line="70" selection-start-column="28" selection-end-line="70" selection-end-column="28" />
           <folding>
-            <marker date="1536090284168" expanded="true" signature="1087:1947" ph="..." />
-            <marker date="1536090284168" expanded="true" signature="2027:2504" ph="..." />
-            <marker date="1536090284168" expanded="true" signature="2699:2944" ph="..." />
-            <marker date="1536090284168" expanded="true" signature="3359:4170" ph="..." />
+            <element signature="e#228#240#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/catkin_ws/src/scripts/pclproc.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="738">
-          <caret line="167" column="68" lean-forward="true" selection-start-line="167" selection-start-column="68" selection-end-line="167" selection-end-column="68" />
+        <state relative-caret-position="18">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
           <folding>
             <element signature="e#0#17#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/catkin_ws/src/scripts/segmentation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" lean-forward="true" selection-start-line="1" selection-end-line="2" />
+          <folding>
+            <element signature="e#22#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/segmentation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="36" lean-forward="true" selection-end-line="10" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/pclproc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="10" lean-forward="true" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Exercise-1/kmeans.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="10" lean-forward="true" selection-start-line="2" selection-end-line="13" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/imagerecognition.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="9" lean-forward="true" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
         </state>
       </provider>
     </entry>

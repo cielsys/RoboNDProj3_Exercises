@@ -1,3 +1,4 @@
+# OBSOLETE : Moved into into catkin_ws3
 import subprocess
 import datetime
 

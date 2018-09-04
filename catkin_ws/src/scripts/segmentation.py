@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+# OBSOLETE : Moved into into catkin_ws3
+
 import numpy
 import math
 import os
