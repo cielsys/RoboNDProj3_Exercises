@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="561b81cd-a511-40c0-845b-cc44f5e32733" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/catkin_ws/src/scripts/Assets/pcdOut/extracted_inliers.pcd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/catkin_ws/src/scripts/Assets/pcdOut/extracted_outliers.pcd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/catkin_ws/src/scripts/Assets/pcdOut/pass_through_filtered.pcd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/catkin_ws/src/scripts/Assets/pcdOut/table_scene_lms400_inliers.pcd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/catkin_ws/src/scripts/Assets/pcdOut/table_scene_lms400_outliers.pcd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/catkin_ws/src/scripts/Assets/pcdOut/tabletop.pcd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/catkin_ws/src/scripts/Assets/pcdOut/voxel_downsampled.pcd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/catkin_ws/src/scripts/junk.py" beforeDir="false" afterPath="$PROJECT_DIR$/catkin_ws/src/scripts/junk.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catkin_ws/src/scripts/msgPCL.pypickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catkin_ws/src/config/perception.rviz" beforeDir="false" afterPath="$PROJECT_DIR$/catkin_ws/src/config/perception.rviz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/catkin_ws/src/scripts/pclproc.py" beforeDir="false" afterPath="$PROJECT_DIR$/catkin_ws/src/scripts/pclproc.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/catkin_ws/src/scripts/segmentation.py" beforeDir="false" afterPath="$PROJECT_DIR$/catkin_ws/src/scripts/segmentation.py" afterDir="false" />
     </list>
@@ -32,15 +25,15 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Python Console" value="15" />
-          <entry key="dummy" value="88" />
-          <entry key="py" value="3507" />
+          <entry key="dummy" value="90" />
+          <entry key="py" value="3859" />
           <entry key="txt" value="48" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="136" />
-          <entry key="Python" value="3522" />
+          <entry key="PLAIN_TEXT" value="138" />
+          <entry key="Python" value="3874" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -57,29 +50,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/catkin_ws/src/scripts/segmentation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-504">
-              <caret line="53" column="28" selection-start-line="53" selection-start-column="28" selection-end-line="53" selection-end-column="28" />
+            <state relative-caret-position="126">
+              <caret line="10" column="36" lean-forward="true" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
               <folding>
-                <element signature="e#40#52#0" expanded="true" />
-                <marker date="1536030021756" expanded="true" signature="1052:1860" ph="..." />
-                <marker date="1536030021756" expanded="true" signature="1940:2327" ph="..." />
-                <marker date="1536030021756" expanded="true" signature="2522:2767" ph="..." />
-                <marker date="1536030021756" expanded="true" signature="3058:3775" ph="..." />
+                <marker date="1536090284168" expanded="true" signature="1087:1947" ph="..." />
+                <marker date="1536090284168" expanded="true" signature="2027:2504" ph="..." />
+                <marker date="1536090284168" expanded="true" signature="2699:2944" ph="..." />
+                <marker date="1536090284168" expanded="true" signature="3359:4170" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/catkin_ws/src/scripts/pclproc.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-198">
-              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+            <state relative-caret-position="738">
+              <caret line="167" column="68" lean-forward="true" selection-start-line="167" selection-start-column="68" selection-end-line="167" selection-end-column="68" />
               <folding>
-                <element signature="e#0#18#0" expanded="true" />
+                <element signature="e#0#17#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -179,8 +171,8 @@
         <option value="$PROJECT_DIR$/Exercise-1/dbscan.py" />
         <option value="$PROJECT_DIR$/Exercise-1/RANSAC.py" />
         <option value="$PROJECT_DIR$/catkin_ws/src/scripts/junk.py" />
-        <option value="$PROJECT_DIR$/catkin_ws/src/scripts/pclproc.py" />
         <option value="$PROJECT_DIR$/catkin_ws/src/scripts/segmentation.py" />
+        <option value="$PROJECT_DIR$/catkin_ws/src/scripts/pclproc.py" />
       </list>
     </option>
   </component>
@@ -592,26 +584,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/catkin_ws/src/scripts/pclproc.py">
+    <entry file="file://$PROJECT_DIR$/catkin_ws/src/scripts/segmentation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-198">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        <state relative-caret-position="126">
+          <caret line="10" column="36" lean-forward="true" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <marker date="1536090284168" expanded="true" signature="1087:1947" ph="..." />
+            <marker date="1536090284168" expanded="true" signature="2027:2504" ph="..." />
+            <marker date="1536090284168" expanded="true" signature="2699:2944" ph="..." />
+            <marker date="1536090284168" expanded="true" signature="3359:4170" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/catkin_ws/src/scripts/segmentation.py">
+    <entry file="file://$PROJECT_DIR$/catkin_ws/src/scripts/pclproc.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-504">
-          <caret line="53" column="28" selection-start-line="53" selection-start-column="28" selection-end-line="53" selection-end-column="28" />
+        <state relative-caret-position="738">
+          <caret line="167" column="68" lean-forward="true" selection-start-line="167" selection-start-column="68" selection-end-line="167" selection-end-column="68" />
           <folding>
-            <element signature="e#40#52#0" expanded="true" />
-            <marker date="1536030021756" expanded="true" signature="1052:1860" ph="..." />
-            <marker date="1536030021756" expanded="true" signature="1940:2327" ph="..." />
-            <marker date="1536030021756" expanded="true" signature="2522:2767" ph="..." />
-            <marker date="1536030021756" expanded="true" signature="3058:3775" ph="..." />
+            <element signature="e#0#17#0" expanded="true" />
           </folding>
         </state>
       </provider>

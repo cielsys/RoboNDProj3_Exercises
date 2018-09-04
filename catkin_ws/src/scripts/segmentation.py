@@ -16,7 +16,7 @@ import rospy
 #from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
 #from geometry_msgs.msg import Pose
 import sensor_msgs.point_cloud2 as pc2
-
+import pcl
 # Local imports
 import pcl_helper
 import pclproc
@@ -26,6 +26,7 @@ import pclproc
 g_pcl_sub = None
 g_pcl_objects_pub = None
 g_pcl_table_pub = None
+g_pcl_cluster_pub = None
 g_callBackCount = -1
 
 # For testing only
@@ -45,19 +46,20 @@ def ProcessPCL(pclpcRawIn):
     pclRecs += pclRecsDownSampled
     pclpcDownSampled, pclpcDownSampledName = pclRecsDownSampled[0]
 
-    # TODO: PassThrough Filter
+    # PassThrough Filter
     pclRecsRansac = pclproc.PCLProc_Ransac(pclpcDownSampled)
     pclRecs += pclRecsRansac
 
-    # TODO: Extract inliers and outliers
+    # Extract inliers and outliers
     pclpcPassZ, pclpcPassZIn, pclpcPassZOut = pclRecsRansac[0][0], pclRecsRansac[1][0], pclRecsRansac[2][0]
     pclpcTable, pclpcObjects = pclpcPassZIn, pclpcPassZOut
 
-    # TODO: Euclidean Clustering
+    # Euclidean Clustering
+    pclpObjectsNoColor = pcl_helper.XYZRGB_to_XYZ(pclpcObjects)
+    pclpcClusters = pclproc.PCLProc_ExtractClusters(pclpObjectsNoColor)
 
-    # TODO: Create Cluster-Mask Point Cloud to visualize each cluster separately
+    return pclpcObjects, pclpcTable, pclpcClusters
 
-    return pclpcObjects, pclpcTable
 
 #--------------------------------- Process_msgPCL()
 def Process_msgPCL(msgPCL):
@@ -65,20 +67,21 @@ def Process_msgPCL(msgPCL):
     pclpcRawIn = pcl_helper.ros_to_pcl(msgPCL)
 
     #------- PROCESS RAW PC-------------------------
-    pclpcObjects, pclpcTable = ProcessPCL(pclpcRawIn)
+    pclpcObjects, pclpcTable, pclpcClusters = ProcessPCL(pclpcRawIn)
 
-    # Package Processed pcl into Ros msgPCL
+    # Package Processed pcls into Ros msgPCL
     msgPCLObjects = pcl_helper.pcl_to_ros(pclpcObjects)
     msgPCLTable = pcl_helper.pcl_to_ros(pclpcTable)
+    msgPCLClusters = pcl_helper.pcl_to_ros(pclpcClusters)
 
-    return msgPCLObjects, msgPCLTable
+    return msgPCLObjects, msgPCLTable, msgPCLClusters
 
 #--------------------------------- CB_msgPCL()
 def CB_msgPCL(msgPCL):
     global g_callBackCount
     g_callBackCount += 1
 
-    cbSkip = 50
+    cbSkip = 10
     if (g_callBackCount % cbSkip != 0):
         return;
 
@@ -89,22 +92,26 @@ def CB_msgPCL(msgPCL):
     if (g_doSaveTestmsgPCL & g_callBackCount == cbSkip):
         pickle.dump(msgPCL, open(g_testmsgPCLFilename, "wb"))
 
-    msgPCLObjects, msgPCLTable = Process_msgPCL(msgPCL)
+    msgPCLObjects, msgPCLTable, msgPCLClusters = Process_msgPCL(msgPCL)
 
     # Publish ROS messages
     g_pcl_objects_pub.publish(msgPCLObjects)
     g_pcl_table_pub.publish(msgPCLTable)
+    g_pcl_cluster_pub.publish(msgPCLClusters)
 
 
 #====================== Main() =====================
 def RunRosNode():
-    print("Ros node subscribe/publish init...")
+    '''
+    ROS segmentation node initialization
+    '''
+    print("OS segmentation node initializatiing...")
 
     global g_pcl_sub
     global g_pcl_objects_pub
     global g_pcl_table_pub
+    global g_pcl_cluster_pub
 
-    # ROS node initialization
     rospy.init_node('clustering', anonymous=True)
 
     # Create Subscribers
@@ -113,13 +120,14 @@ def RunRosNode():
     # Create Publishers
     g_pcl_objects_pub = rospy.Publisher("/pcl_objects", pcl_helper.PointCloud2, queue_size=1)
     g_pcl_table_pub = rospy.Publisher("/pcl_table", pcl_helper.PointCloud2, queue_size=1)
+    g_pcl_cluster_pub = rospy.Publisher("/pcl_cluster", pcl_helper.PointCloud2, queue_size=1)
 
     # Initialize color_list
     pcl_helper.get_color_list.color_list = []
 
     # Spin while node is not shutdown
     while not rospy.is_shutdown():
-        print("Ros.clustering node statrted.")
+        print("ROS segmentation node running.")
         rospy.spin()
 
 

@@ -1,10 +1,13 @@
+import subprocess
+import datetime
+
 import numpy as np
 import cv2
 from sklearn.cluster import DBSCAN
-
 import pcl
-import datetime
-import subprocess
+
+# Local imports
+import pcl_helper
 
 #====================== GLOBALS =====================
 
@@ -42,7 +45,7 @@ def PCLProc_Ransac(pclpcIn):
 
     # Assign axis and range to the passthrough filter object.
     filter_axis = 'z'
-    axis_min = 0.6
+    axis_min = 0.7
     axis_max = 1.1
     filPassthrough.set_filter_field_name(filter_axis)
     filPassthrough.set_filter_limits(axis_min, axis_max)
@@ -62,7 +65,7 @@ def PCLProc_Ransac(pclpcIn):
     # Max distance for a point to be considered fitting the model
     # Experiment with different values for max_distance
     # for segmenting the table
-    max_distance = 0.01
+    max_distance = 0.005
     seg.set_distance_threshold(max_distance)
 
     # Call the segment function to obtain set of inlier indices and model coefficients
@@ -141,6 +144,42 @@ def PCLProc_DBScan(ptsIn):
     unique_labels = set(labels)
 
     return core_samples_mask, labels, unique_labels
+
+
+#--------------------------------- PCLProc_ExtractClusters()
+def PCLProc_ExtractClusters(pclpObjectsIn):
+
+    kdTreeCluster = pclpObjectsIn.make_kdtree()
+
+    # Create a cluster extraction object
+    eClusterExtractor = pclpObjectsIn.make_EuclideanClusterExtraction()
+
+    # Set tolerances for distance threshold & clusterSize min,max (in points)
+    eClusterExtractor.set_ClusterTolerance(0.075)
+    eClusterExtractor.set_MinClusterSize(50)
+    eClusterExtractor.set_MaxClusterSize(2000)
+
+    # Search the k-d tree for clusters
+    eClusterExtractor.set_SearchMethod(kdTreeCluster)
+
+    # Extract indices for each of the discovered clusters
+    clusterIndices = eClusterExtractor.Extract()
+
+    # Assign a color corresponding to each segmented object in scene
+    clusterColor = pcl_helper.get_color_list(len(clusterIndices))
+    clusterColorPointList = []
+    for j, indices in enumerate(clusterIndices):
+        for i, indice in enumerate(indices):
+            clusterColorPointList.append([pclpObjectsIn[indice][0],
+                                          pclpObjectsIn[indice][1],
+                                          pclpObjectsIn[indice][2],
+                                          pcl_helper.rgb_to_float(clusterColor[j])])
+    # Create new cloud containing all clusters, each with unique color
+    pclpcClusters = pcl.PointCloud_PointXYZRGB()
+    pclpcClusters.from_list(clusterColorPointList)
+    return pclpcClusters
+
+
 
 ###################################### TESTS ###########################
 ###################################### TESTS ###########################
