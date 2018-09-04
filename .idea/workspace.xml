@@ -2,25 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="561b81cd-a511-40c0-845b-cc44f5e32733" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/catkin_ws/src/scripts/pclproc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise-1/Assets/pcdOut/pclPCDownSampled_2018-09-02T19:33:47.pcd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise-1/Assets/pcdOut/pclPCIn_2018-09-02T19:33:47.pcd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise-1/Assets/pcdOut/pclPCPassZIn_2018-09-02T19:33:47.pcd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise-1/Assets/pcdOut/pclPCPassZOut_2018-09-02T19:33:47.pcd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise-1/Assets/pcdOut/pclPCPassZ_2018-09-02T19:33:47.pcd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise-1/Assets/pcdOut/pclPNoiseInliers_2018-09-02T19:33:47.pcd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise-1/Assets/pcdOut/pclPNoiseOutliers_2018-09-02T19:33:47.pcd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise-1/Assets/pcdOut/pclpNoiseInliers_2018-09-03T09:40:12.pcd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise-1/Assets/pcdOut/pclpNoiseInliers_2018-09-03T10:07:25.pcd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise-1/Assets/pcdOut/pclpNoiseOutliers_2018-09-03T09:40:12.pcd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise-1/Assets/pcdOut/pclpNoiseOutliers_2018-09-03T10:07:25.pcd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise-1/RANSAC.py" beforeDir="false" afterPath="$PROJECT_DIR$/Exercise-1/RANSAC.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise-1/dbscan.py" beforeDir="false" afterPath="$PROJECT_DIR$/Exercise-1/dbscan.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise-1/kmeans.py" beforeDir="false" afterPath="$PROJECT_DIR$/Exercise-1/kmeans.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise-1/utils_plot.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonutils/utils_plot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catkin_ws/src/scripts/Assets/pcdOut/extracted_inliers.pcd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/catkin_ws/src/scripts/Assets/pcdOut/extracted_outliers.pcd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/catkin_ws/src/scripts/Assets/pcdOut/pass_through_filtered.pcd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/catkin_ws/src/scripts/Assets/pcdOut/table_scene_lms400_inliers.pcd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/catkin_ws/src/scripts/Assets/pcdOut/table_scene_lms400_outliers.pcd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/catkin_ws/src/scripts/Assets/pcdOut/tabletop.pcd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/catkin_ws/src/scripts/Assets/pcdOut/voxel_downsampled.pcd" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/catkin_ws/src/scripts/junk.py" beforeDir="false" afterPath="$PROJECT_DIR$/catkin_ws/src/scripts/junk.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catkin_ws/src/scripts/msgPCL.pypickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/catkin_ws/src/scripts/pclproc.py" beforeDir="false" afterPath="$PROJECT_DIR$/catkin_ws/src/scripts/pclproc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catkin_ws/src/scripts/segmentation.py" beforeDir="false" afterPath="$PROJECT_DIR$/catkin_ws/src/scripts/segmentation.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,51 +33,75 @@
         <counts>
           <entry key="Python Console" value="15" />
           <entry key="dummy" value="88" />
-          <entry key="py" value="2624" />
+          <entry key="py" value="3507" />
+          <entry key="txt" value="48" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="88" />
-          <entry key="Python" value="2639" />
+          <entry key="PLAIN_TEXT" value="136" />
+          <entry key="Python" value="3522" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="12" />
+          <entry key="py" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="12" />
+          <entry key="Python" value="15" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/catkin_ws/src/scripts/segmentation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="520">
-              <caret line="61" selection-start-line="61" selection-end-line="61" />
+            <state relative-caret-position="-504">
+              <caret line="53" column="28" selection-start-line="53" selection-start-column="28" selection-end-line="53" selection-end-column="28" />
               <folding>
-                <element signature="e#40#60#0" expanded="true" />
-                <marker date="1535992804429" expanded="true" signature="738:1053" ph="..." />
-                <marker date="1535992804429" expanded="true" signature="2013:2751" ph="..." />
+                <element signature="e#40#52#0" expanded="true" />
+                <marker date="1536030021756" expanded="true" signature="1052:1860" ph="..." />
+                <marker date="1536030021756" expanded="true" signature="1940:2327" ph="..." />
+                <marker date="1536030021756" expanded="true" signature="2522:2767" ph="..." />
+                <marker date="1536030021756" expanded="true" signature="3058:3775" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/catkin_ws/src/scripts/pclproc.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4502">
-              <caret line="8" selection-start-line="8" selection-end-line="8" />
+            <state relative-caret-position="-198">
+              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/catkin_ws/src/scripts/pcl_helper.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="58" column="14" selection-start-line="58" selection-start-column="4" selection-end-line="58" selection-end-column="14" />
+              <folding>
+                <element signature="e#228#240#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/catkin_ws/src/scripts/junk.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="8" selection-start-line="7" selection-end-line="8" />
             </state>
           </provider>
         </entry>
@@ -111,8 +127,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Exercise-1/RANSAC.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
+            <state relative-caret-position="252">
+              <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
                 <marker date="1536019904650" expanded="true" signature="2329:2330" ph="..." />
@@ -139,6 +155,7 @@
       <find>clusters_</find>
       <find>core_samples_mask</find>
       <find>labels</find>
+      <find>v</find>
     </findStrings>
     <replaceStrings>
       <replace>PC</replace>
@@ -157,18 +174,18 @@
         <option value="$PROJECT_DIR$/Exercise-1/winqt5.py" />
         <option value="$PROJECT_DIR$/Exercise-1/winqt4.py" />
         <option value="$PROJECT_DIR$/Exercise-1/utils_plot.py" />
-        <option value="$PROJECT_DIR$/catkin_ws/src/scripts/segmentation.py" />
-        <option value="$PROJECT_DIR$/catkin_ws/src/scripts/junk.py" />
         <option value="$PROJECT_DIR$/Exercise-1/pclproc.py" />
         <option value="$PROJECT_DIR$/Exercise-1/kmeans.py" />
         <option value="$PROJECT_DIR$/Exercise-1/dbscan.py" />
         <option value="$PROJECT_DIR$/Exercise-1/RANSAC.py" />
+        <option value="$PROJECT_DIR$/catkin_ws/src/scripts/junk.py" />
+        <option value="$PROJECT_DIR$/catkin_ws/src/scripts/pclproc.py" />
+        <option value="$PROJECT_DIR$/catkin_ws/src/scripts/segmentation.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="3599" />
-    <option name="y" value="42" />
     <option name="width" value="2161" />
     <option name="height" value="1850" />
   </component>
@@ -207,6 +224,14 @@
             <path>
               <item name="RoboND-Perception-Exercises" type="b2602c69:ProjectViewProjectNode" />
               <item name="RoboND-Perception-Exercises" type="462c0819:PsiDirectoryNode" />
+              <item name="catkin_ws" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+              <item name="Assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RoboND-Perception-Exercises" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RoboND-Perception-Exercises" type="462c0819:PsiDirectoryNode" />
               <item name="Exercise-1" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -241,7 +266,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.pclproc">
+  <component name="RunManager" selected="Python.segmentation">
     <configuration name="RANSAC" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="RoboND-Perception-Exercises" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -376,7 +401,7 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Exercise-1" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/catkin_ws/src/scripts/" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="false" />
       <option name="ADD_SOURCE_ROOTS" value="false" />
@@ -436,17 +461,26 @@
       <option name="presentableId" value="Default" />
       <updated>1535773580384</updated>
     </task>
+    <task id="LOCAL-00001" summary="Consolidated exercise 1 funcitons in pclproc.py">
+      <created>1536020338385</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1536020338385</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="3599" y="42" width="2161" height="1850" extended-state="0" />
+    <frame x="3599" y="0" width="2161" height="1850" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2009434" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2009434" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3299279" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.20853366" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.20853366" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39903846" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -462,6 +496,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Consolidated exercise 1 funcitons in pclproc.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="Consolidated exercise 1 funcitons in pclproc.py" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -504,16 +542,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/catkin_ws/src/scripts/pcl_helper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="38" column="14" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="14" />
-          <folding>
-            <element signature="e#228#240#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Exercise-1/kmeans.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -528,13 +556,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/catkin_ws/src/scripts/junk.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pythonutils/utils_plot.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -542,10 +563,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/catkin_ws/src/scripts/pcl_helper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="58" column="14" selection-start-line="58" selection-start-column="4" selection-end-line="58" selection-end-column="14" />
+          <folding>
+            <element signature="e#228#240#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/catkin_ws/src/scripts/junk.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" selection-start-line="7" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Exercise-1/RANSAC.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        <state relative-caret-position="252">
+          <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
             <marker date="1536019904650" expanded="true" signature="2329:2330" ph="..." />
@@ -554,24 +592,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/catkin_ws/src/scripts/segmentation.py">
+    <entry file="file://$PROJECT_DIR$/catkin_ws/src/scripts/pclproc.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="61" selection-start-line="61" selection-end-line="61" />
+        <state relative-caret-position="-198">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
           <folding>
-            <element signature="e#40#60#0" expanded="true" />
-            <marker date="1535992804429" expanded="true" signature="738:1053" ph="..." />
-            <marker date="1535992804429" expanded="true" signature="2013:2751" ph="..." />
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/catkin_ws/src/scripts/pclproc.py">
+    <entry file="file://$PROJECT_DIR$/catkin_ws/src/scripts/segmentation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4502">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="-504">
+          <caret line="53" column="28" selection-start-line="53" selection-start-column="28" selection-end-line="53" selection-end-column="28" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#40#52#0" expanded="true" />
+            <marker date="1536030021756" expanded="true" signature="1052:1860" ph="..." />
+            <marker date="1536030021756" expanded="true" signature="1940:2327" ph="..." />
+            <marker date="1536030021756" expanded="true" signature="2522:2767" ph="..." />
+            <marker date="1536030021756" expanded="true" signature="3058:3775" ph="..." />
           </folding>
         </state>
       </provider>

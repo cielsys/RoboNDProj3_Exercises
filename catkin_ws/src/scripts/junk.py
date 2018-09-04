@@ -23,3 +23,13 @@ def LoadFile_msgPCL(fileNameIn = "msgPCL.pypickle"):
 
     # Finally call the filter function for magic
     #cloud_filtered = outlier_filter.filter()
+
+    # Create a VoxelGrid filter object for our input point cloud
+    vox = pclpcIn.make_voxel_grid_filter()
+    voxelSize = 0.01
+    vox.set_leaf_size(voxelSize, voxelSize, voxelSize)
+
+    # TODO: Voxel Grid Downsampling
+    # Call the filter function to obtain the resultant downsampled point cloud
+    pclpcVoxels = vox.filter()
+    pclRecs.append((pclpcVoxels, "pclpcDownSampled"))

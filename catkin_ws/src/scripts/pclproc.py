@@ -6,6 +6,10 @@ import pcl
 import datetime
 import subprocess
 
+#====================== GLOBALS =====================
+
+# For testing only
+g_doTests = False
 
 #----------------------- PlottingBackend_Switch()
 def PlottingBackend_Switch(whichBackEnd):
@@ -32,10 +36,6 @@ def PCLProc_DownSampleVoxels(pclpcIn):
 #----------------------- PCLProc_Ransac()
 def PCLProc_Ransac(pclpcIn):
     pclRecs = [] # For dev/debug display. Container for point cloud records: tuple (pclObj, pclName)
-    #pclRecs.append((pclpcIn, "pclpcIn"))
-
-    #pclpcDownSampled = PCLProc_DownSampleVoxels(pclpcIn)
-    #pclRecs.append((pclpcDownSampled, "pclpcDownSampled"))
 
     # Create a PassThrough filter object.
     filPassthrough = pclpcIn.make_passthrough_filter()
@@ -76,7 +76,6 @@ def PCLProc_Ransac(pclpcIn):
     pclRecs.append((pclpcPassZOut, "pclpcPassZOut"))
 
     return(pclRecs)
-
 
 #----------------------- PCLProc_Noise()
 def PCLProc_Noise(pclpIn):
@@ -194,6 +193,7 @@ def SavePCLs(pclRecs, dirNameOut, useTimeStamp=True):
         fileNameOutBase = pclName +  strDT + extOut
         fileNameOut= dirNameOut + fileNameOutBase
         pcl.save(pclObj, fileNameOut)
+        print("Saving file ", fileNameOut)
         #subprocess.call(["pcl_viewer", fileNameOut])
 
 #----------------------- Test_PCLProc_Ransac()
@@ -323,9 +323,7 @@ def Test_PCLProc_DBScan():
     core_samples_mask, labels, unique_labels = PCLProc_DBScan(testClusters)
     PlotClustersDBScan(testClusters, testClustersx, testClustersy, core_samples_mask, labels, unique_labels)
 
-# ============ Auto invoke Test_PCLProc_Noise()
-g_doTests = True
-
+# ============ Auto invoke Test_PCLProc_*
 if (g_doTests):
     Test_PCLProc_Ransac()
     Test_PCLProc_Noise()

@@ -2,6 +2,9 @@
 catkin_ws/build
 catkin_ws/devel
 Exercise-1/Assets/pcdOut
+catkin_ws/src/scripts/Assets/pcdOut
+catkin_ws/src/scripts/Assets/pcdOut
+
 [Jj]unk/
 *.pyc
 .ipynb_checkpoints/
