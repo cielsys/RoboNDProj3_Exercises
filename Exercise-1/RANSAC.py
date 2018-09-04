@@ -1,22 +1,30 @@
+# OBSOLETE : Consolidated into catkin_ws/src/scripts/pclproc.py
+
 import datetime
 import subprocess
 import pcl
 
-def PCLProc_Ransac(pclpcIn):
-    pclRecs = [] # For dev/debug display. Container for point cloud records: tuple (pclObj, pclName)
-    pclRecs.append((pclpcIn, "pclpcIn"))
-
+#----------------------- PCLProc_DownSampleVoxels()
+def PCLProc_DownSampleVoxels(pclpcIn):
     # Create a VoxelGrid filter object for our input point cloud
     vox = pclpcIn.make_voxel_grid_filter()
     voxelSize = 0.01
     vox.set_leaf_size(voxelSize, voxelSize, voxelSize)
-
     # Call the filter function to obtain the resultant downsampled point cloud
-    pclpcVoxels = vox.filter()
-    pclRecs.append((pclpcVoxels, "pclpcDownSampled"))
+    pclpcDownSampled = vox.filter()
+    pclRecs = [(pclpcDownSampled, "pclpcDownSampled")]
+    return pclRecs
+
+#----------------------- PCLProc_Ransac()
+def PCLProc_Ransac(pclpcIn):
+    pclRecs = [] # For dev/debug display. Container for point cloud records: tuple (pclObj, pclName)
+    #pclRecs.append((pclpcIn, "pclpcIn"))
+
+    #pclpcDownSampled = PCLProc_DownSampleVoxels(pclpcIn)
+    #pclRecs.append((pclpcDownSampled, "pclpcDownSampled"))
 
     # Create a PassThrough filter object.
-    filPassthrough = pclpcVoxels.make_passthrough_filter()
+    filPassthrough = pclpcIn.make_passthrough_filter()
 
     # Assign axis and range to the passthrough filter object.
     filter_axis = 'z'
@@ -53,31 +61,17 @@ def PCLProc_Ransac(pclpcIn):
     pclRecs.append((pclpcPassZIn, "pclpcPassZIn"))
     pclRecs.append((pclpcPassZOut, "pclpcPassZOut"))
 
-    # Not really needed here because we have no noise
-    # Much like the previous filters, we start by creating a filter object:
-    #outlier_filter = cloud_filtered.make_statistical_outlier_filter(1)
-
-    # Set the number of neighboring points to analyze for any given point
-    #outlier_filter.set_mean_k(50)
-
-    # Set threshold scale factor
-    #x = 1.0
-
-    # Any point with a mean distance larger than global (mean distance+x*std_dev) will be considered outlier
-    #outlier_filter.set_std_dev_mul_thresh(x)
-
-    # Finally call the filter function for magic
-    #cloud_filtered = outlier_filter.filter()
     return(pclRecs)
 
-def PCLProc_Noise(pclpcIn):
+#----------------------- PCLProc_Noise()
+def PCLProc_Noise(pclpIn):
     pclRecs = [] # For dev/debug display. Container for point cloud records: tuple (pclObj, pclName)
 
-    fil = pclpcIn.make_statistical_outlier_filter()
-    k_numNeighborsToCheck = 50
-    k_threshScaleFactor = 1.0
-    fil.set_mean_k(k_numNeighborsToCheck)
-    fil.set_std_dev_mul_thresh(k_threshScaleFactor)
+    fil = pclpIn.make_statistical_outlier_filter()
+    numNeighborsToCheck = 50
+    threshScaleFactor = 1.0
+    fil.set_mean_k(numNeighborsToCheck)
+    fil.set_std_dev_mul_thresh(threshScaleFactor)
 
     pclpNoiseInliers = fil.filter()
     fil.set_negative(True)
@@ -87,7 +81,9 @@ def PCLProc_Noise(pclpcIn):
     pclRecs.append((pclpNoiseOutliers, "pclpNoiseOutliers"))
     return(pclRecs)
 
+
 ###################################### TESTS ###########################
+
 #----------------------- SavePCLs()
 def SavePCLs(pclRecs, dirNameOut, useTimeStamp=True):
     if (useTimeStamp):
@@ -102,36 +98,48 @@ def SavePCLs(pclRecs, dirNameOut, useTimeStamp=True):
         pcl.save(pclObj, fileNameOut)
         #subprocess.call(["pcl_viewer", fileNameOut])
 
-
 #----------------------- Test_PCLProc_Ransac()
 def Test_PCLProc_Ransac():
+    pclRecs = [] # For dev/debug display. Container for point cloud records: tuple (pclObj, pclName)
     # Load Point Cloud file
     dirNameIn = "./Assets/pcdIn/"
     fileNameBaseIn = 'tabletop.pcd'
     fileNameIn = dirNameIn + fileNameBaseIn
-    pclpcIn = pcl.load_XYZRGB(fileNameIn)
+    pclpcInRaw = pcl.load_XYZRGB(fileNameIn)
+    pclRecs.append((pclpcInRaw, "pclpcInRaw"))
 
-    pclRecs = PCLProc_Ransac(pclpcIn)
+    pclRecsDownSampled = PCLProc_DownSampleVoxels(pclpcInRaw)
+    pclpcDownSampled, pclpcDownSampledName = pclRecsDownSampled[0]
+    pclRecs += pclRecsDownSampled
+
+    pclRecsRansac = PCLProc_Ransac(pclpcDownSampled)
+    pclRecs += pclRecsRansac
+
     dirNameOut = "./Assets/pcdOut/"
     SavePCLs(pclRecs, dirNameOut, useTimeStamp=True)
 
-#============ Auto invoke Test_PCLProc_Ransac()
-#Test_PCLProc_Ransac()
-
-
 # ----------------------- Test_PCLProc_Noise()
 def Test_PCLProc_Noise():
+    pclRecs = [] # For dev/debug display. Container for point cloud records: tuple (pclObj, pclName)
+
     # Load Point Cloud file
     dirNameIn = "./Assets/pcdIn/"
     fileNameBaseIn = 'table_scene_lms400.pcd'
     fileNameIn = dirNameIn + fileNameBaseIn
 
-    pclpcIn = pcl.load(fileNameIn)
+    pclpRaw = pcl.load(fileNameIn)
+    pclRecs.append((pclpRaw, "pclpcInRaw"))
 
-    pclRecs = PCLProc_Noise(pclpcIn)
+    pclRecsDownSampled = PCLProc_DownSampleVoxels(pclpRaw)
+    pclpDownSampled, pclpDownSampledName = pclRecsDownSampled[0]
+    pclRecs += pclRecsDownSampled
+
+    pclRecsNoise = PCLProc_Noise(pclpDownSampled)
+    pclRecs += pclRecsNoise
+
     dirNameOut = "./Assets/pcdOut/"
     SavePCLs(pclRecs, dirNameOut, useTimeStamp=True)
 
-
 # ============ Auto invoke Test_PCLProc_Noise()
+#Test_PCLProc_Ransac()
 Test_PCLProc_Noise()

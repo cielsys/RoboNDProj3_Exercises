@@ -1,6 +1,7 @@
 # -*- mode: gitignore; -*-
 catkin_ws/build
 catkin_ws/devel
+Exercise-1/Assets/pcdOut
 [Jj]unk/
 *.pyc
 .ipynb_checkpoints/
