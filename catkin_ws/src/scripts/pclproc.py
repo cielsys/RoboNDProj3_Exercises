@@ -152,18 +152,18 @@ def PCLProc_ExtractClusters(pclpObjectsIn):
     kdTreeCluster = pclpObjectsIn.make_kdtree()
 
     # Create a cluster extraction object
-    eClusterExtractor = pclpObjectsIn.make_EuclideanClusterExtraction()
+    clusterExtractor = pclpObjectsIn.make_EuclideanClusterExtraction()
 
     # Set tolerances for distance threshold & clusterSize min,max (in points)
-    eClusterExtractor.set_ClusterTolerance(0.075)
-    eClusterExtractor.set_MinClusterSize(50)
-    eClusterExtractor.set_MaxClusterSize(2000)
+    clusterExtractor.set_ClusterTolerance(0.075)
+    clusterExtractor.set_MinClusterSize(50)
+    clusterExtractor.set_MaxClusterSize(2000)
 
     # Search the k-d tree for clusters
-    eClusterExtractor.set_SearchMethod(kdTreeCluster)
+    clusterExtractor.set_SearchMethod(kdTreeCluster)
 
     # Extract indices for each of the discovered clusters
-    clusterIndices = eClusterExtractor.Extract()
+    clusterIndices = clusterExtractor.Extract()
 
     # Assign a color corresponding to each segmented object in scene
     clusterColor = pcl_helper.get_color_list(len(clusterIndices))
