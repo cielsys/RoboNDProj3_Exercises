@@ -32,11 +32,11 @@ from sklearn.model_selection import train_test_split # scikit-learn >= 0.18
 
 #====================== GLOBALS =====================
 # For testing only
-g_doTests = False
-g_doPlots = False
+g_doTests = True
+g_doPlots = True
 
 #--------------------------------- ImgRecog_CalcHistogram()
-def ImgRecog_CalcHistogram(imgIn, numBins=32, binRange=(0, 256), doConvertToHSV=True):
+def ImgRecog_ExtractHistFeaturesFromImage(imgIn, numBins=32, binRange=(0, 256), doConvertToHSV=True):
     """
     Compute color histogram features
     :param img:
@@ -58,15 +58,15 @@ def ImgRecog_CalcHistogram(imgIn, numBins=32, binRange=(0, 256), doConvertToHSV=
     histConsolidated = np.concatenate((histR[0], histG[0], histB[0])).astype(np.float64)
 
     # Normalize the result
-    histConsolidatedNorm = histConsolidated / np.sum(histConsolidated)
+    histNormedFeatures = histConsolidated / np.sum(histConsolidated)
 
     # Return the feature vector
     histograms = [histR, histG, histB]
-    return histConsolidatedNorm, histograms
+    return histNormedFeatures, histograms
 
 
-#--------------------------------- ImgRecog_CalcHistogram()
-def ImgRecog_SupportVectorMachine(clustersX, clustersY, labels):
+#--------------------------------- ImgRecog_TrainSVCPointClusters()
+def ImgRecog_TrainSVC2DPointClusters(clustersX, clustersY, labels):
     """
     Use scikit SVM
     :param clustersX:
@@ -82,9 +82,10 @@ def ImgRecog_SupportVectorMachine(clustersX, clustersY, labels):
     y = np.float32((np.concatenate(labels)))
 
     # Create an instance of SVM and fit the data.
-    ker = "poly" # linear poly rbf sigmoid precomputed
-    svc = svm.SVC(kernel=ker).fit(X, y)
-
+    kernel = "poly" # linear poly rbf sigmoid precomputed
+    if (kernel != "linear"):
+        print("Fitting classifier with", kernel, "kernel... Could take a long time...")
+    newSVCClassifier = svm.SVC(kernel=kernel).fit(X, y)
 
     # Create a mesh that we will use to colorfully plot the decision surface
     # Plotting Routine courtesy of: http://scikit-learn.org/stable/auto_examples/svm/plot_iris.html#sphx-glr-auto-examples-svm-plot-iris-py
@@ -96,10 +97,88 @@ def ImgRecog_SupportVectorMachine(clustersX, clustersY, labels):
     xx, yy = np.meshgrid(np.arange(x_min, x_max, h), np.arange(y_min, y_max, h))
 
     # Classify each block of the mesh (used to assign its color)
-    Z = svc.predict(np.c_[xx.ravel(), yy.ravel()])
+    Z = newSVCClassifier.predict(np.c_[xx.ravel(), yy.ravel()])
 
-    return X, y, Z, xx, yy, ker
+    return X, y, Z, xx, yy, kernel
 
+
+#--------------------------------- ImgRecog_ExtractHistogramFeaturesFromImageFiles()
+def ImgRecog_ExtractHistFeaturesFromImageFiles(imageFileNames, numBins=32, binRange=(0, 256)):
+    """
+    Extract features from a list of images
+    """
+
+    listHistNormedFeatures = []
+    for imageFileName in imageFileNames:
+
+        imgRaw = mpimg.imread(imageFileName)
+        histNormedFeatures, histograms = ImgRecog_ExtractHistFeaturesFromImage(imgRaw, numBins, binRange, doConvertToHSV=True)
+
+        # Append the new feature vector to the features list
+        listHistNormedFeatures.append(histNormedFeatures)
+
+    return listHistNormedFeatures
+
+
+#--------------------------------- ImgRecog_TrainBinarySVCImageClassifier()
+def ImgRecog_TrainBinarySVCImageClassifier(carsFilenamesIn, notCarsFilenamesIn, numBins = 32, binRange=(0, 256)):
+    """
+
+    :param carsFilenamesIn:
+    :param notCarsFilenamesIn:
+    :param numBins:
+    :param binRange:
+    :return:
+    """
+
+    featuresCar = ImgRecog_ExtractHistFeaturesFromImageFiles(carsFilenamesIn, numBins, binRange)
+    featuresNotCar = ImgRecog_ExtractHistFeaturesFromImageFiles(notCarsFilenamesIn, numBins, binRange)
+
+    # Create an array stack of feature vectors
+    X = np.vstack((featuresCar, featuresNotCar)).astype(np.float64)
+
+    # Fit a per-column scaler
+    X_scaler = StandardScaler().fit(X)
+
+    # Apply the scaler to X
+    scaled_X = X_scaler.transform(X)
+
+    # Define the labels vector
+    y = np.hstack((np.ones(len(featuresCar)), np.zeros(len(featuresNotCar))))
+
+    # Split up data into randomized training and test sets
+    rand_state = np.random.randint(0, 100)
+    X_train, X_test, y_train, y_test = train_test_split(scaled_X, y, test_size=0.2, random_state=rand_state)
+
+    # Use a linear SVC
+    newSVCClassifier = SVC(kernel='linear')
+
+    # Check the training time for the SVC
+    t0=time.time()
+    newSVCClassifier.fit(X_train, y_train)
+    t1 = time.time()
+    tTrain = round(t1 - t0, 2)
+
+    # Check the score of the SVC
+    testAccuracy = round(newSVCClassifier.score(X_test, y_test), 4)
+
+    # Check the prediction time for a single sample
+    t0=time.time()
+    n_predict = 10
+    prediction = newSVCClassifier.predict(X_test[0:n_predict])
+    t1 = time.time()
+    tPredict = round(t1 - t0, 5)
+
+    print('Dataset includes', len(carsFilenamesIn), 'cars and', len(carsFilenamesIn), 'not-cars')
+    print('Using', numBins,'histogram bins')
+    print('Feature vector length:', len(X_train[0]))
+    print(tTrain, 'Seconds to train SVC...')
+    print('Test Accuracy of SVC = ', testAccuracy)
+    print('My SVC predicts: ', prediction)
+    print('For these', n_predict, 'labels: ', y_test[0:n_predict])
+    print(tPredict, 'Seconds to predict', n_predict, 'labels with SVC')
+
+    return newSVCClassifier
 
 
 ###################################### TESTS ###########################
@@ -174,9 +253,9 @@ def PlotHistogram(histograms):
     plt.show()
 
 #--------------------------------- PlotHistogramFeatures()
-def PlotHistogramFeatures(histConsolidatedNorm):
+def PlotHistogramFeatures(histNormedFeatures):
     fig = plt.figure(figsize=(12,6))
-    plt.plot(histConsolidatedNorm)
+    plt.plot(histNormedFeatures)
     plt.title('RGB or HSV Feature Vector', fontsize=30)
     plt.tick_params(axis='both', which='major', labelsize=20)
     fig.tight_layout()
@@ -200,109 +279,42 @@ def PlotSVM(X, y, Z, xx, yy, ker):
     plt.show()
 
 #--------------------------------- Test_ImgRec_CalHistogram()
-def Test_ImgRec_CalcHistogram():
-    dirNameIn = "./Assets/ImagesIn/"
+def Test_ImgRecog_CalcHistogram():
+    dirNameIn = "./Assets/ImagesIn/tableobjects/"
     fileNameBaseIn = "beer_clean.jpg" # udacan hammer bowl dispart create beer
     fileNameIn = dirNameIn + fileNameBaseIn
 
     imgRaw = mpimg.imread(fileNameIn)
-    histConsolidatedNorm, histograms = ImgRecog_CalcHistogram(imgRaw, numBins=32, binRange=(0, 256), doConvertToHSV=True)
+    histNormedFeatures, histograms = ImgRecog_ExtractHistFeaturesFromImage(imgRaw, numBins=32, binRange=(0, 256), doConvertToHSV=True)
 
     if (g_doPlots):
         plt.imshow(imgRaw)
         PlotHistogram(histograms)
-        PlotHistogramFeatures(histConsolidatedNorm)
+        PlotHistogramFeatures(histNormedFeatures)
 
 #--------------------------------- Test_ImgRecog_SupportVectorMachine()
-def Test_ImgRecog_SupportVectorMachine():
+def Test_ImgRecog_TrainSVC2DPointClusters():
     numClusters = 6
     clustersX, clustersY, labels = GenerateLabeledClusters(numClusters)
-    X, y, Z, xx, yy, ker = ImgRecog_SupportVectorMachine(clustersX, clustersY, labels)
+    X, y, Z, xx, yy, ker = ImgRecog_TrainSVC2DPointClusters(clustersX, clustersY, labels)
     PlotSVM(X, y, Z, xx, yy, ker)
 
-# ============ Auto invoke Test_PCLProc_*
+#--------------------------------- Test_ImgRecog_TrainBinarySVCImageClassifier()
+def Test_ImgRecog_TrainBinarySVCImageClassifier():
+    # Read in car and non-car images
+    carsDirNameIn = "./Assets/ImagesIn/cars/"
+    notCarsDirNameIn = "./Assets/ImagesIn/notcars/"
+    wildCard = '*.jpeg'
+
+    carsFilenamesIn = glob.glob(carsDirNameIn + wildCard)
+    notCarsFilenamesIn = glob.glob(notCarsDirNameIn + wildCard)
+
+    numBins = 32
+    binRange = (0, 256)
+    newSVCClassifier = ImgRecog_TrainBinarySVCImageClassifier(carsFilenamesIn, notCarsFilenamesIn, numBins, binRange)
+
+# ============ Auto invoke Test_ImgRecog*
 if (g_doTests):
-    Test_ImgRec_CalcHistogram()
-    Test_ImgRecog_SupportVectorMachine()
-
-
-###################################### SVM Image Classification ###########################
-###################################### SVM Image Classification ###########################
-###################################### SVM Image Classification ###########################
-
-
-# Define a function to extract features from a list of images
-# Have this function call color_hist()
-#--------------------------------- extract_features()
-def extract_features(imgs, hist_bins=32, hist_range=(0, 256)):
-    # Create a list to append feature vectors to
-    features = []
-
-    # Iterate through the list of image files
-    for file in imgs:
-        # Read in each one by one
-        imgRaw = mpimg.imread(file)
-
-        # Apply color_hist()
-        histConsolidatedNorm, histograms = ImgRecog_CalcHistogram(imgRaw, numBins=32, binRange=(0, 256), doConvertToHSV=True)
-
-        # Append the new feature vector to the features list
-        features.append(histConsolidatedNorm)
-
-    # Return list of feature vectors
-    return features
-
-
-# Read in car and non-car images
-carsDirNameIn = "./Assets/ImagesIn/cars/"
-notCarsDirNameIn = "./Assets/ImagesIn/notcars/"
-wildCard = '*.jpeg'
-
-carsFilenamesIn = glob.glob(carsDirNameIn + wildCard)
-notCarsFilenamesIn = glob.glob(notCarsDirNameIn + wildCard)
-allFileNamesIn = carsFilenamesIn + notCarsFilenamesIn
-cars = carsFilenamesIn
-notcars = notCarsFilenamesIn
-
-# TODO play with this value to see how your classifier
-# performs under different binning scenarios
-histbin = 32
-
-car_features = extract_features(cars, hist_bins=histbin, hist_range=(0, 256))
-notcar_features = extract_features(notcars, hist_bins=histbin, hist_range=(0, 256))
-
-# Create an array stack of feature vectors
-X = np.vstack((car_features, notcar_features)).astype(np.float64)
-
-# Fit a per-column scaler
-X_scaler = StandardScaler().fit(X)
-
-# Apply the scaler to X
-scaled_X = X_scaler.transform(X)
-
-# Define the labels vector
-y = np.hstack((np.ones(len(car_features)), np.zeros(len(notcar_features))))
-
-# Split up data into randomized training and test sets
-rand_state = np.random.randint(0, 100)
-X_train, X_test, y_train, y_test = train_test_split(scaled_X, y, test_size=0.2, random_state=rand_state)
-
-print('Dataset includes', len(cars), 'cars and', len(notcars), 'not-cars')
-print('Using', histbin,'histogram bins')
-print('Feature vector length:', len(X_train[0]))
-# Use a linear SVC
-svc = SVC(kernel='linear')
-# Check the training time for the SVC
-t=time.time()
-svc.fit(X_train, y_train)
-t2 = time.time()
-print(round(t2-t, 2), 'Seconds to train SVC...')
-# Check the score of the SVC
-print('Test Accuracy of SVC = ', round(svc.score(X_test, y_test), 4))
-# Check the prediction time for a single sample
-t=time.time()
-n_predict = 10
-print('My SVC predicts: ', svc.predict(X_test[0:n_predict]))
-print('For these',n_predict, 'labels: ', y_test[0:n_predict])
-t2 = time.time()
-print(round(t2-t, 5), 'Seconds to predict', n_predict,'labels with SVC')
+    Test_ImgRecog_CalcHistogram()
+    Test_ImgRecog_TrainSVC2DPointClusters()
+    Test_ImgRecog_TrainBinarySVCImageClassifier()

@@ -2,6 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="561b81cd-a511-40c0-845b-cc44f5e32733" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/Assets/ImagesIn/TableObjects/beer.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/Assets/ImagesIn/TableObjects/beer_clean.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/Assets/ImagesIn/TableObjects/bowl.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/Assets/ImagesIn/TableObjects/bowl_clean.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/Assets/ImagesIn/TableObjects/create.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/Assets/ImagesIn/TableObjects/create_clean.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/Assets/ImagesIn/TableObjects/diskpart.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/Assets/ImagesIn/TableObjects/diskpart_clean.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/Assets/ImagesIn/TableObjects/hammer.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/Assets/ImagesIn/TableObjects/hammer_clean.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/Assets/ImagesIn/TableObjects/udacan.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/Assets/ImagesIn/TableObjects/udacan_clean.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/Assets/ImagesIn/TableObjects/udaparts.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/imagerecognition.py" beforeDir="false" afterPath="$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/imagerecognition.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,32 +30,36 @@
     <session id="846354917">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.14" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="Python Console" value="15" />
-          <entry key="dummy" value="99" />
-          <entry key="py" value="4982" />
+          <entry key="Python Console" value="16" />
+          <entry key="dummy" value="152" />
+          <entry key="py" value="5384" />
           <entry key="txt" value="48" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="147" />
-          <entry key="Python" value="4997" />
+          <entry key="PLAIN_TEXT" value="200" />
+          <entry key="Python" value="5400" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="out" value="1" />
           <entry key="py" value="28" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
+          <entry key="PLAIN_TEXT" value="1" />
           <entry key="Python" value="28" />
         </counts>
       </usages-collector>
@@ -47,11 +67,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/segmentation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="702">
-              <caret line="39" selection-start-line="38" selection-end-line="39" />
+            <state relative-caret-position="1206">
+              <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
               <folding>
                 <element signature="e#22#34#0" expanded="true" />
               </folding>
@@ -71,36 +91,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/pclproc.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1060">
-              <caret line="367" column="25" selection-start-line="365" selection-end-line="367" selection-end-column="25" />
-              <folding>
-                <element signature="e#39#54#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/imagerecognition.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
-              <caret line="265" lean-forward="true" selection-start-line="265" selection-end-line="265" />
-              <folding>
-                <marker date="1536123711303" expanded="true" signature="2245:3380" ph="..." />
-                <marker date="1536123711303" expanded="true" signature="3600:3601" ph="..." />
-                <marker date="1536123711303" expanded="true" signature="5421:5422" ph="..." />
-                <marker date="1536123711303" expanded="true" signature="5504:5505" ph="..." />
-                <marker date="1536123711303" expanded="true" signature="6207:6938" ph="..." />
-              </folding>
+            <state relative-caret-position="756">
+              <caret line="50" column="53" selection-start-line="50" selection-start-column="53" selection-end-line="50" selection-end-column="53" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file:///usr/lib/python2.7/dist-packages/matplotlib/backends/qt_compat.py">
+        <entry file="file://$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/imagerecognition.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
-              <caret line="123" selection-start-line="123" selection-end-line="123" />
+            <state relative-caret-position="1818">
+              <caret line="101" column="34" selection-start-line="101" selection-start-column="34" selection-end-line="101" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -108,7 +109,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Exercise-1/RANSAC.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="862">
+            <state relative-caret-position="2268">
               <caret line="128" selection-start-line="124" selection-end-line="128" />
               <folding>
                 <marker date="1536019904650" expanded="true" signature="2329:2330" ph="..." />
@@ -136,12 +137,14 @@
       <find>core_samples_mask</find>
       <find>v</find>
       <find>labels</find>
+      <find>histConsolidatedNorm</find>
     </findStrings>
     <replaceStrings>
       <replace>PC</replace>
       <replace>P</replace>
       <replace>pclp</replace>
       <replace>testClusters</replace>
+      <replace>histNormedFeatures</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -167,9 +170,26 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="3599" />
-    <option name="width" value="2114" />
-    <option name="height" value="1850" />
+    <option name="x" value="3158" />
+    <option name="width" value="2189" />
+    <option name="height" value="1885" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State />
+          <State>
+            <id>Python</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>PyPep8NamingInspection</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -219,6 +239,23 @@
             <path>
               <item name="RoboND-Perception-Exercises" type="b2602c69:ProjectViewProjectNode" />
               <item name="RoboND-Perception-Exercises" type="462c0819:PsiDirectoryNode" />
+              <item name="catkin_ws3" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="sensor_stick" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RoboND-Perception-Exercises" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RoboND-Perception-Exercises" type="462c0819:PsiDirectoryNode" />
+              <item name="catkin_ws3" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="sensor_stick" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="sensor_stick" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RoboND-Perception-Exercises" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RoboND-Perception-Exercises" type="462c0819:PsiDirectoryNode" />
               <item name="Exercise-1" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -229,6 +266,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/pclproc.py" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -476,23 +514,23 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="3599" y="0" width="2114" height="1850" extended-state="0" />
+    <frame x="3158" y="0" width="2189" height="1885" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20549928" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19832402" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3299279" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.20853366" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.20853366" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39903846" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.3299279" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" order="10" weight="0.17848557" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5004656" side_tool="true" visible="true" weight="0.17480871" />
+      <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.49953446" visible="true" weight="0.17480871" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -502,6 +540,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/python-pcl" />
+    </ignored-roots>
     <MESSAGE value="Consolidated exercise 1 funcitons in pclproc.py" />
     <option name="LAST_COMMIT_MESSAGE" value="Consolidated exercise 1 funcitons in pclproc.py" />
   </component>
@@ -512,11 +553,6 @@
           <url>file://$PROJECT_DIR$/Exercise-1/RANSAC.py</url>
           <line>108</line>
           <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/imagerecognition.py</url>
-          <line>268</line>
-          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -543,10 +579,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2034">
           <caret line="113" column="8" selection-start-line="113" selection-start-column="8" selection-end-line="113" selection-end-column="8" />
-          <folding>
-            <element signature="e#45#58#0" expanded="true" />
-            <marker date="1535934247970" expanded="true" signature="2081:2269" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -554,10 +586,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="538">
           <caret line="49" column="72" selection-start-line="49" selection-start-column="72" selection-end-line="49" selection-end-column="72" />
-          <folding>
-            <element signature="e#45#58#0" expanded="true" />
-            <marker date="1535821791443" expanded="true" signature="2154:2345" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -586,9 +614,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="558">
           <caret line="70" column="28" selection-start-line="70" selection-start-column="28" selection-end-line="70" selection-end-column="28" />
-          <folding>
-            <element signature="e#228#240#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -596,9 +621,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
           <caret line="1" selection-start-line="1" selection-end-line="1" />
-          <folding>
-            <element signature="e#0#17#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -606,47 +628,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="2" lean-forward="true" selection-start-line="1" selection-end-line="2" />
-          <folding>
-            <element signature="e#22#34#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Exercise-1/kmeans.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="10" selection-start-line="2" selection-end-line="13" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/segmentation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="39" selection-start-line="38" selection-end-line="39" />
-          <folding>
-            <element signature="e#22#34#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/pclproc.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1060">
-          <caret line="367" column="25" selection-start-line="365" selection-end-line="367" selection-end-column="25" />
-          <folding>
-            <element signature="e#39#54#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Exercise-1/RANSAC.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="862">
-          <caret line="128" selection-start-line="124" selection-end-line="128" />
-          <folding>
-            <marker date="1536019904650" expanded="true" signature="2329:2330" ph="..." />
-            <marker date="1536019904650" expanded="true" signature="3037:3418" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -664,16 +645,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Exercise-1/kmeans.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="10" selection-start-line="2" selection-end-line="13" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/imagerecognition.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="265" lean-forward="true" selection-start-line="265" selection-end-line="265" />
+        <state relative-caret-position="1818">
+          <caret line="101" column="34" selection-start-line="101" selection-start-column="34" selection-end-line="101" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Exercise-1/RANSAC.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2268">
+          <caret line="128" selection-start-line="124" selection-end-line="128" />
           <folding>
-            <marker date="1536123711303" expanded="true" signature="2245:3380" ph="..." />
-            <marker date="1536123711303" expanded="true" signature="3600:3601" ph="..." />
-            <marker date="1536123711303" expanded="true" signature="5421:5422" ph="..." />
-            <marker date="1536123711303" expanded="true" signature="5504:5505" ph="..." />
-            <marker date="1536123711303" expanded="true" signature="6207:6938" ph="..." />
+            <marker date="1536019904650" expanded="true" signature="2329:2330" ph="..." />
+            <marker date="1536019904650" expanded="true" signature="3037:3418" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/pclproc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="756">
+          <caret line="50" column="53" selection-start-line="50" selection-start-column="53" selection-end-line="50" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/catkin_ws3/nohup.out">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/segmentation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1206">
+          <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
+          <folding>
+            <element signature="e#22#34#0" expanded="true" />
           </folding>
         </state>
       </provider>

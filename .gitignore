@@ -1,17 +1,13 @@
 # -*- mode: gitignore; -*-
-Exercise-1/Assets/pcdOut
 
-catkin_ws/build
-catkin_ws/devel
-catkin_ws/src/scripts/Assets/pcdOut
+**/build
+**/devel
+**/Assets/pcdOut
 
-catkin_ws3/build
-catkin_ws3/devel
-catkin_ws3/src/scripts/Assets/pcdOut
-
-[Jj]unk/
+**/[Jj]unk/
 
 .DS_Store
+nohup.out
 
 *.pyc
 .ipynb_checkpoints/
