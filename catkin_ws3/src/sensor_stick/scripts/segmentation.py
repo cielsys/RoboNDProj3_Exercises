@@ -17,8 +17,11 @@ import rospy
 #from geometry_msgs.msg import Pose
 import sensor_msgs.point_cloud2 as pc2
 import pcl
+
 # Local imports
 import pcl_helper
+
+#import sensor_stick.pcl_helper
 import pclproc
 
 #====================== GLOBALS =====================
@@ -28,17 +31,22 @@ g_pcl_objects_pub = None
 g_pcl_table_pub = None
 g_pcl_cluster_pub = None
 g_callBackCount = -1
+g_callBackSkip = 10 # How many callbacks to skip until actual processing
 
 # For testing only
-g_doRunRosNode = True # For invoking RunRosNode() when run from pycharm
-g_doTests = False # Invokes Test_Process_msgPCL() when file is run
-g_doDebugIO = True # Saves intermediate pcd files and displays clustering plots
-g_testmsgPCLFilename = "./Assets/msgPCL.pypickle" # File containing a typical Ros msgPCL, used by doTests
-g_doSaveTestmsgPCL = False
+g_doRunRosNode = False # For invoking RunRosNode() when run from pycharm
+g_doTests = True # Invokes Test_Process_msgPCL() when file is run
+g_testmsgPCLFilename = "./Assets/msgPCL" # + "num..pypickle" # File containing a typical Ros msgPCL, used by doTests
+g_testrawPCLFilename = "./Assets/rawPCL" # + "num.pypickle" # File containing a typical rawPCL as unpacked my pcl_helper used by doTests
+g_dumpCountTestmsgPCL = 0 # How many debug msgPCL files to dump. Normally 0
+g_dumpCountTestrawPCL = 0 # How many debug rawPCL files to dump. Normally 0
 
 #--------------------------------- ProcessPCL()
-def ProcessPCL(pclpcRawIn):
+def Process_rawPCL(pclpcRawIn):
     pclRecs = [] # For dev/debug display. Container for point cloud records: tuple (pclObj, pclName# )
+
+    # Initialize color_list
+    pcl_helper.get_color_list.color_list = []
 
     pclRecs.append((pclpcRawIn, "pclpcRawIn"))
 
@@ -63,11 +71,26 @@ def ProcessPCL(pclpcRawIn):
 
 #--------------------------------- Process_msgPCL()
 def Process_msgPCL(msgPCL):
+    global g_dumpCountTestmsgPCL
+    global g_dumpCountTestrawPCL
+
+    # DevDebug save msgPCL to file for debug
+    if (g_dumpCountTestmsgPCL > 0):
+        g_dumpCountTestmsgPCL -= 1
+        fileNameOut = g_testmsgPCLFilename + str(g_dumpCountTestmsgPCL)  + ".pypickle"
+        pickle.dump(msgPCL, open(fileNameOut, "wb"))
+
     # Extract pcl Raw from Ros msgPCL
     pclpcRawIn = pcl_helper.ros_to_pcl(msgPCL)
 
-    #------- PROCESS RAW PC-------------------------
-    pclpcObjects, pclpcTable, pclpcClusters = ProcessPCL(pclpcRawIn)
+    # DevDebug save msgPCL to file for debug
+    if (g_dumpCountTestrawPCL > 0):
+        g_dumpCountTestrawPCL -= 1
+        fileNameOut = g_testrawPCLFilename + str(g_dumpCountTestrawPCL)  + ".pypickle"
+        pickle.dump(pclpcRawIn, open(fileNameOut, "wb"))
+
+    #------- PROCESS RAW PCL-------------------------
+    pclpcObjects, pclpcTable, pclpcClusters = Process_rawPCL(pclpcRawIn)
 
     # Package Processed pcls into Ros msgPCL
     msgPCLObjects = pcl_helper.pcl_to_ros(pclpcObjects)
@@ -81,16 +104,11 @@ def CB_msgPCL(msgPCL):
     global g_callBackCount
     g_callBackCount += 1
 
-    cbSkip = 10
-    if (g_callBackCount % cbSkip != 0):
+    if (g_callBackCount % g_callBackSkip != 0):
         return;
 
     print "\rCBCount= {:05d}".format(g_callBackCount),
     sys.stdout.flush()
-
-    # DevDebug save msgPCL to file for debug
-    if (g_doSaveTestmsgPCL & g_callBackCount == cbSkip):
-        pickle.dump(msgPCL, open(g_testmsgPCLFilename, "wb"))
 
     msgPCLObjects, msgPCLTable, msgPCLClusters = Process_msgPCL(msgPCL)
 
@@ -123,7 +141,7 @@ def RunRosNode():
     g_pcl_cluster_pub = rospy.Publisher("/pcl_cluster", pcl_helper.PointCloud2, queue_size=1)
 
     # Initialize color_list
-    pcl_helper.get_color_list.color_list = []
+    #pcl_helper.get_color_list.color_list = []
 
     # Spin while node is not shutdown
     while not rospy.is_shutdown():
@@ -142,10 +160,20 @@ if ((__name__ == '__main__') & g_doRunRosNode):
 
 #--------------------------------- Test_Process_msgPCL()
 def Test_Process_msgPCL():
-    msgPCL = pickle.load( open(g_testmsgPCLFilename, "rb" ) )
-    msgPCLObjects, msgPCLTable = Process_msgPCL(msgPCL)
+    dumpIndex = 0
+    fileNameIn = g_testmsgPCLFilename + str(dumpIndex) + ".pypickle"
+    msgPCL = pickle.load( open(fileNameIn, "rb" ) )
+    msgPCLObjects, msgPCLTable, pclpcClusters = Process_msgPCL(msgPCL)
+
+#--------------------------------- Test_Process_rawPCL()
+def Test_Process_rawPCL():
+    dumpIndex = 0
+    fileNameIn = g_testrawPCLFilename + str(dumpIndex) + ".pypickle"
+    pclpcRawIn = pickle.load( open(fileNameIn, "rb" ) )
+    pclpcObjects, pclpcTable, pclpcClusters = Process_rawPCL(pclpcRawIn)
 
 
 # ============ Auto invoke Test_PCLProc_*
 if (g_doTests):
-    Test_Process_msgPCL()
+    Test_Process_rawPCL()
+    #Test_Process_msgPCL() # Depends on -> pcl_helper.py -> Active ROS environment

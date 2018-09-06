@@ -1,4 +1,13 @@
 import pickle
+#print("CWD:", os.getcwd())
+#absPath = os.path.abspath('../src/sensor_stick')
+#print("absPath", absPath)
+#sys.path.insert(0, absPath)
+#sys.path.insert(0, "/home/cl/AAAProjects/AAAUdacity/roboND/Proj3_3dPerception/RoboND-Perception-Exercises/catkin_ws3/src/sensor_stick/src/sensor_stick/")
+#print("sys.path",sys.path)
+#from sensor_stick import pcl_helper
+#import sensor_stick
+import sensor_stick.pcl_helper as pcl_helper
 
 #--------------------------------- pickle templates
 def Camera_SaveCalFile(calFileName, dictCameraCalVals):

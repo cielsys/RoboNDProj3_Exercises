@@ -1,11 +1,14 @@
 #!/usr/bin/env python
 # import subprocess
 import datetime
-
+import matplotlib
 import numpy as np
 import cv2
 from sklearn.cluster import DBSCAN
 import pcl
+
+# ROS imports
+import sensor_msgs.point_cloud2 as pc2
 
 # Local imports
 import pcl_helper
@@ -22,7 +25,7 @@ def PlottingBackend_Switch(whichBackEnd):
     from matplotlib import pyplot as plt
     print "Switched to:", matplotlib.get_backend()
 
-PlottingBackend_Switch('QT4Agg')
+#PlottingBackend_Switch('QT4Agg')
 import matplotlib.pyplot as plt
 
 #----------------------- PCLProc_DownSampleVoxels()
@@ -180,6 +183,84 @@ def PCLProc_ExtractClusters(pclpObjectsIn):
     pclpcClusters.from_list(clusterColorPointList)
     return pclpcClusters
 
+
+#--------------------------------- PCLProc
+def rgb_to_hsv(rgb_list):
+    rgb_normalized = [1.0 * rgb_list[0] / 255, 1.0 * rgb_list[1] / 255, 1.0 * rgb_list[2] / 255]
+    hsv_normalized = matplotlib.colors.rgb_to_hsv([[rgb_normalized]])[0][0]
+    return hsv_normalized
+
+
+#--------------------------------- PCLProc
+def compute_color_histograms(cloud, numBins=32, binRange=(0, 256), doConvertToHSV=True):
+    # Compute histograms for the clusters
+    point_colors_list = []
+
+    # Step through each point in the point cloud
+    for point in pc2.read_points(cloud, skip_nans=True):
+        rgb_list = pcl_helper.float_to_rgb(point[3])
+        if doConvertToHSV:
+            point_colors_list.append(rgb_to_hsv(rgb_list) * 255)
+        else:
+            point_colors_list.append(rgb_list)
+
+    # Populate lists with color values
+    channel_1_vals = []
+    channel_2_vals = []
+    channel_3_vals = []
+
+    for color in point_colors_list:
+        channel_1_vals.append(color[0])
+        channel_2_vals.append(color[1])
+        channel_3_vals.append(color[2])
+
+    # Compute the histogram of the RGB or HSV channels separately
+    histR = np.histogram(channel_1_vals, bins=numBins, range=binRange)
+    histG = np.histogram(channel_2_vals, bins=numBins, range=binRange)
+    histB = np.histogram(channel_3_vals, bins=numBins, range=binRange)
+    histograms = [histR, histG, histB]
+
+
+    # Concatenate the histograms into a single feature vector
+    histConsolidated = np.concatenate((histR[0], histG[0], histB[0])).astype(np.float64)
+
+    # Normalize the result
+    histNormedFeatures = histConsolidated / np.sum(histConsolidated)
+
+    # Generate random features for demo mode.
+    # Replace normed_features with your feature vector
+    #normed_features = np.random.random(96)
+    return histNormedFeatures
+
+
+#--------------------------------- PCLProc_
+def compute_normal_histograms(normal_cloud, numBins=32, binRange=(0, 256)):
+    norm_x_vals = []
+    norm_y_vals = []
+    norm_z_vals = []
+
+    for norm_component in pc2.read_points(normal_cloud,field_names=('normal_x', 'normal_y', 'normal_z'),skip_nans=True):
+        norm_x_vals.append(norm_component[0])
+        norm_y_vals.append(norm_component[1])
+        norm_z_vals.append(norm_component[2])
+
+    # Compute the histogram of the RGB or HSV channels separately
+    histR = np.histogram(norm_x_vals, bins=numBins, range=binRange)
+    histG = np.histogram(norm_y_vals, bins=numBins, range=binRange)
+    histB = np.histogram(norm_z_vals, bins=numBins, range=binRange)
+    histograms = [histR, histG, histB]
+
+
+    # Concatenate the histograms into a single feature vector
+    histConsolidated = np.concatenate((histR[0], histG[0], histB[0])).astype(np.float64)
+
+    # Normalize the result
+    histNormedFeatures = histConsolidated / np.sum(histConsolidated)
+
+    # Generate random features for demo mode.
+    # Replace normed_features with your feature vector
+    #normed_features = np.random.random(96)
+    return histNormedFeatures
 
 
 ###################################### TESTS ###########################
