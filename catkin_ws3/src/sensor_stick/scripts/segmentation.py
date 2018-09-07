@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-import numpy
+import numpy as np
 import math
 import os
 import sys
@@ -9,6 +9,8 @@ import pickle
 #import traceback
 #import pprint
 #pp = pprint.PrettyPrinter(indent=4)
+from sklearn.preprocessing import LabelEncoder
+import pcl
 
 # ROS imports
 import rospy
@@ -16,7 +18,12 @@ import rospy
 #from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
 #from geometry_msgs.msg import Pose
 import sensor_msgs.point_cloud2 as pc2
-import pcl
+from sensor_stick.srv import GetNormals
+
+#from sensor_stick.marker_tools import *
+import sensor_stick.marker_tools as marker_tools
+#from sensor_stick.msg import DetectedObject
+from visualization_msgs.msg import Marker
 
 # Local imports
 import pcl_helper
@@ -30,23 +37,31 @@ g_pcl_sub = None
 g_pcl_objects_pub = None
 g_pcl_table_pub = None
 g_pcl_cluster_pub = None
+g_object_markers_pub = None
+g_detected_objects_pub = None
 g_callBackCount = -1
-g_callBackSkip = 10 # How many callbacks to skip until actual processing
+g_callBackSkip = 40 # How many callbacks to skip until actual processing
 
 # For testing only
-g_doRunRosNode = False # For invoking RunRosNode() when run from pycharm
-g_doTests = True # Invokes Test_Process_msgPCL() when file is run
+g_doRunRosNode = True # For invoking RunRosNode() when run from pycharm
+g_doTests = False # Invokes Test_Process_msgPCL() when file is run
 g_testmsgPCLFilename = "./Assets/msgPCL" # + "num..pypickle" # File containing a typical Ros msgPCL, used by doTests
 g_testrawPCLFilename = "./Assets/rawPCL" # + "num.pypickle" # File containing a typical rawPCL as unpacked my pcl_helper used by doTests
 g_dumpCountTestmsgPCL = 0 # How many debug msgPCL files to dump. Normally 0
 g_dumpCountTestrawPCL = 0 # How many debug rawPCL files to dump. Normally 0
+
+
+#--------------------------------- get_normals()
+def get_normals(cloud):
+    get_normals_prox = rospy.ServiceProxy('/feature_extractor/get_normals', GetNormals)
+    return get_normals_prox(cloud).cluster
 
 #--------------------------------- ProcessPCL()
 def Process_rawPCL(pclpcRawIn):
     pclRecs = [] # For dev/debug display. Container for point cloud records: tuple (pclObj, pclName# )
 
     # Initialize color_list
-    pcl_helper.get_color_list.color_list = []
+    #pcl_helper.get_color_list.color_list = []
 
     pclRecs.append((pclpcRawIn, "pclpcRawIn"))
 
@@ -64,9 +79,9 @@ def Process_rawPCL(pclpcRawIn):
 
     # Euclidean Clustering
     pclpObjectsNoColor = pcl_helper.XYZRGB_to_XYZ(pclpcObjects)
-    pclpcClusters = pclproc.PCLProc_ExtractClusters(pclpObjectsNoColor)
+    clusterIndices, pclpcClusters = pclproc.PCLProc_ExtractClusters(pclpObjectsNoColor)
 
-    return pclpcObjects, pclpcTable, pclpcClusters
+    return clusterIndices, pclpcObjects, pclpcTable, pclpcClusters
 
 
 #--------------------------------- Process_msgPCL()
@@ -90,7 +105,64 @@ def Process_msgPCL(msgPCL):
         pickle.dump(pclpcRawIn, open(fileNameOut, "wb"))
 
     #------- PROCESS RAW PCL-------------------------
-    pclpcObjects, pclpcTable, pclpcClusters = Process_rawPCL(pclpcRawIn)
+    clusterIndices, pclpcObjects, pclpcTable, pclpcClusters = Process_rawPCL(pclpcRawIn)
+
+    for index, pclcpObject in enumerate(pclpcObjects):
+        objName = "Ind{}_Raw".format(index)
+        #print(objName)
+        dirNameOut = "./Assets/pcdClassifierOut/"
+        pclRecs = [(pclcpObject, objName)]
+        #pclproc.SavePCLs(pclRecs, dirNameOut, useTimeStamp=True)
+
+    white_cloud = pcl_helper.XYZRGB_to_XYZ(pclpcObjects)
+    # Classify the clusters!
+    detected_objects_labels = []
+    detected_objects = []
+
+    for index, pts_list in enumerate(clusterIndices):
+        # Grab the points for the cluster from the extracted outliers (cloud_objects)
+        pcl_cluster = pclpcObjects.extract(pts_list)
+
+        # TODO: convert the cluster from pcl to ROS using helper function
+        msgPCL_cluster = pcl_helper.pcl_to_ros(pcl_cluster)
+
+        # Extract histogram features
+        # TODO: complete this step just as is covered in capture_features.py
+        chists = pclproc.compute_color_histograms(msgPCL_cluster, doConvertToHSV=True)
+        normals = get_normals(msgPCL_cluster)
+        nhists = pclproc.compute_normal_histograms(normals)
+
+        feature = np.concatenate((chists, nhists))
+
+        # Make the prediction, retrieve the label for the result
+        # and add it to detected_objects_labels list
+        prediction = g_clf.predict(g_scaler.transform(feature.reshape(1, -1)))
+        label = g_encoder.inverse_transform(prediction)[0]
+        detected_objects_labels.append(label)
+
+        objName= "Ind{}_{}".format(index, label)
+        print(objName)
+        dirNameOut = "./Assets/pcdClassifierOut/"
+        pclRecs = [(pcl_cluster, objName)]
+        #pclproc.SavePCLs(pclRecs, dirNameOut, useTimeStamp=True)
+
+        # Publish a label into RViz
+        label_pos = list(white_cloud[pts_list[0]])
+        #label_pos = [1,0,1]
+        #label_pos[1] -= index/4
+        label_pos[2] += 0.4
+        g_object_markers_pub.publish(marker_tools.make_label(label, label_pos, index))
+
+        # Add the detected object to the list of detected objects.
+        #do = DetectedObject()
+        #do.label = label
+        #do.cloud = ros_cluster
+        #do.cloud = pcl_cluster
+        #detected_objects.append(do)
+
+
+
+
 
     # Package Processed pcls into Ros msgPCL
     msgPCLObjects = pcl_helper.pcl_to_ros(pclpcObjects)
@@ -118,6 +190,17 @@ def CB_msgPCL(msgPCL):
     g_pcl_cluster_pub.publish(msgPCLClusters)
 
 
+    #rospy.loginfo('Detected {} objects: {}'.format(len(detected_objects_labels), detected_objects_labels))
+
+    # Publish the list of detected objects
+    # This is the output you'll need to complete the upcoming project!
+    #g_detected_objects_pub.publish(detected_objects)
+
+g_model = None
+g_clf = None
+g_encoder = None
+g_scaler = None
+
 #====================== Main() =====================
 def RunRosNode():
     '''
@@ -129,6 +212,13 @@ def RunRosNode():
     global g_pcl_objects_pub
     global g_pcl_table_pub
     global g_pcl_cluster_pub
+    global g_object_markers_pub
+    global g_detected_objects_pub
+
+    global g_model
+    global g_clf
+    global g_encoder
+    global g_scaler
 
     rospy.init_node('clustering', anonymous=True)
 
@@ -139,9 +229,21 @@ def RunRosNode():
     g_pcl_objects_pub = rospy.Publisher("/pcl_objects", pcl_helper.PointCloud2, queue_size=1)
     g_pcl_table_pub = rospy.Publisher("/pcl_table", pcl_helper.PointCloud2, queue_size=1)
     g_pcl_cluster_pub = rospy.Publisher("/pcl_cluster", pcl_helper.PointCloud2, queue_size=1)
+    g_pcl_table_pub = rospy.Publisher("/pcl_table", pcl_helper.PointCloud2, queue_size=1)
+    g_pcl_cluster_pub = rospy.Publisher("/pcl_cluster", pcl_helper.PointCloud2, queue_size=1)
+
+    g_object_markers_pub = rospy.Publisher("/object_markers", Marker, queue_size=1)
+    #g_detected_objects_pub = rospy.Publisher("/detected_objects", "DetectedObjectsArray", queue_size=1)
+
+    # Load Model From disk
+    g_model = pickle.load(open('model.sav', 'rb'))
+    g_clf = g_model['classifier']
+    g_encoder = LabelEncoder()
+    g_encoder.classes_ = g_model['classes']
+    g_scaler = g_model['scaler']
 
     # Initialize color_list
-    #pcl_helper.get_color_list.color_list = []
+    pcl_helper.get_color_list.color_list = []
 
     # Spin while node is not shutdown
     while not rospy.is_shutdown():

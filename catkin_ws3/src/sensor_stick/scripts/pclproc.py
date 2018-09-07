@@ -49,7 +49,7 @@ def PCLProc_Ransac(pclpcIn):
 
     # Assign axis and range to the passthrough filter object.
     filter_axis = 'z'
-    axis_min = 0.7
+    axis_min = 0.76
     axis_max = 1.1
     filPassthrough.set_filter_field_name(filter_axis)
     filPassthrough.set_filter_limits(axis_min, axis_max)
@@ -69,7 +69,7 @@ def PCLProc_Ransac(pclpcIn):
     # Max distance for a point to be considered fitting the model
     # Experiment with different values for max_distance
     # for segmenting the table
-    max_distance = 0.005
+    max_distance = 0.01
     seg.set_distance_threshold(max_distance)
 
     # Call the segment function to obtain set of inlier indices and model coefficients
@@ -159,9 +159,9 @@ def PCLProc_ExtractClusters(pclpObjectsIn):
     clusterExtractor = pclpObjectsIn.make_EuclideanClusterExtraction()
 
     # Set tolerances for distance threshold & clusterSize min,max (in points)
-    clusterExtractor.set_ClusterTolerance(0.075)
-    clusterExtractor.set_MinClusterSize(50)
-    clusterExtractor.set_MaxClusterSize(2000)
+    clusterExtractor.set_ClusterTolerance(0.015)
+    clusterExtractor.set_MinClusterSize(120)
+    clusterExtractor.set_MaxClusterSize(1500)
 
     # Search the k-d tree for clusters
     clusterExtractor.set_SearchMethod(kdTreeCluster)
@@ -178,10 +178,11 @@ def PCLProc_ExtractClusters(pclpObjectsIn):
                                           pclpObjectsIn[indice][1],
                                           pclpObjectsIn[indice][2],
                                           pcl_helper.rgb_to_float(clusterColor[j])])
+
     # Create new cloud containing all clusters, each with unique color
     pclpcClusters = pcl.PointCloud_PointXYZRGB()
     pclpcClusters.from_list(clusterColorPointList)
-    return pclpcClusters
+    return clusterIndices, pclpcClusters
 
 
 #--------------------------------- PCLProc
@@ -233,7 +234,7 @@ def compute_color_histograms(cloud, numBins=32, binRange=(0, 256), doConvertToHS
     return histNormedFeatures
 
 
-#--------------------------------- PCLProc_
+#--------------------------------- compute_normal_histograms
 def compute_normal_histograms(normal_cloud, numBins=32, binRange=(0, 256)):
     norm_x_vals = []
     norm_y_vals = []

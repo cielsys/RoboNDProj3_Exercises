@@ -141,7 +141,7 @@ def Main():
     rospy.init_node('capture_node')
     initial_setup()# Disable gravity and delete the ground plane
     print("capture_features.py Main() started.")
-    modelNames = [('beer', 10), ('bowl', 10), ('create', 10), ('disk_part', 10), ('hammer', 10), ('plastic_cup', 10), ('soda_can', 10)]
+    modelNames = [('beer', 60), ('bowl', 60), ('create', 60), ('disk_part', 60), ('hammer', 60), ('plastic_cup', 60), ('soda_can', 60)]
     CaptureFeaturesOfModelList(modelNames)
 
 if __name__ == '__main__':
