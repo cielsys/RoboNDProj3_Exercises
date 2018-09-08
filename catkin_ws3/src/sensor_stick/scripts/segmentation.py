@@ -87,8 +87,6 @@ def Process_rawPCL(pclpcRawIn):
     pclpObjectsNoColor = pcl_helper.XYZRGB_to_XYZ(pclpcObjects)
     clusterIndices, pclpcClusters = pclproc.PCLProc_ExtractClusters(pclpObjectsNoColor)
 
-    white_cloud = pcl_helper.XYZRGB_to_XYZ(pclpcObjects)
-
     labelRecs = []
 
     for index, pts_list in enumerate(clusterIndices):
@@ -108,7 +106,7 @@ def Process_rawPCL(pclpcRawIn):
         label = g_encoder.inverse_transform(prediction)[0]
 
         # Accumulate label records for publishing (and labeling detected objects)
-        label_pos = list(white_cloud[pts_list[0]])
+        label_pos = list(pclpcObjects[pts_list[0]])
         label_pos[2] += 0.3
         labelRecs.append((label, label_pos, index))
 

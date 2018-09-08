@@ -106,3 +106,6 @@ def Test_Process_msgPCL():
     fileNameIn = g_testmsgPCLFilename + str(dumpIndex) + ".pypickle"
     msgPCL = pickle.load( open(fileNameIn, "rb" ) )
     msgPCLObjects, msgPCLTable, pclpcClusters = Process_msgPCL(msgPCL)
+
+
+    white_cloud = pcl_helper.XYZRGB_to_XYZ(pclpcObjects)
