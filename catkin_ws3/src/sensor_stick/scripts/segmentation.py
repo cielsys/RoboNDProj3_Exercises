@@ -22,7 +22,8 @@ from sensor_stick.srv import GetNormals
 
 #from sensor_stick.marker_tools import *
 import sensor_stick.marker_tools as marker_tools
-#from sensor_stick.msg import DetectedObject
+from sensor_stick.msg import DetectedObjectsArray
+from sensor_stick.msg import DetectedObject
 from visualization_msgs.msg import Marker
 
 # Local imports
@@ -107,6 +108,11 @@ def Process_msgPCL(msgPCL):
     #------- PROCESS RAW PCL-------------------------
     clusterIndices, pclpcObjects, pclpcTable, pclpcClusters = Process_rawPCL(pclpcRawIn)
 
+    # Package Processed pcls into Ros msgPCL
+    msgPCLObjects = pcl_helper.pcl_to_ros(pclpcObjects)
+    msgPCLTable = pcl_helper.pcl_to_ros(pclpcTable)
+    msgPCLClusters = pcl_helper.pcl_to_ros(pclpcClusters)
+
     for index, pclcpObject in enumerate(pclpcObjects):
         objName = "Ind{}_Raw".format(index)
         #print(objName)
@@ -148,26 +154,20 @@ def Process_msgPCL(msgPCL):
 
         # Publish a label into RViz
         label_pos = list(white_cloud[pts_list[0]])
-        #label_pos = [1,0,1]
-        #label_pos[1] -= index/4
-        label_pos[2] += 0.4
+        label_pos[2] += 0.3
         g_object_markers_pub.publish(marker_tools.make_label(label, label_pos, index))
 
         # Add the detected object to the list of detected objects.
-        #do = DetectedObject()
-        #do.label = label
-        #do.cloud = ros_cluster
-        #do.cloud = pcl_cluster
-        #detected_objects.append(do)
+        do = DetectedObject()
+        do.label = label
+        do.cloud = pclpcClusters
+        detected_objects.append(do)
 
+    rospy.loginfo('Detected {} objects: {}'.format(len(detected_objects_labels), detected_objects_labels))
 
-
-
-
-    # Package Processed pcls into Ros msgPCL
-    msgPCLObjects = pcl_helper.pcl_to_ros(pclpcObjects)
-    msgPCLTable = pcl_helper.pcl_to_ros(pclpcTable)
-    msgPCLClusters = pcl_helper.pcl_to_ros(pclpcClusters)
+    # Publish the list of detected objects
+    # This is the output you'll need to complete the upcoming project!
+    g_detected_objects_pub.publish(detected_objects)
 
     return msgPCLObjects, msgPCLTable, msgPCLClusters
 
@@ -233,7 +233,7 @@ def RunRosNode():
     g_pcl_cluster_pub = rospy.Publisher("/pcl_cluster", pcl_helper.PointCloud2, queue_size=1)
 
     g_object_markers_pub = rospy.Publisher("/object_markers", Marker, queue_size=1)
-    #g_detected_objects_pub = rospy.Publisher("/detected_objects", "DetectedObjectsArray", queue_size=1)
+    g_detected_objects_pub = rospy.Publisher("/detected_objects", DetectedObjectsArray, queue_size=1)
 
     # Load Model From disk
     g_model = pickle.load(open('model.sav', 'rb'))
