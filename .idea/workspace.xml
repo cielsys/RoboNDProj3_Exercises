@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="561b81cd-a511-40c0-845b-cc44f5e32733" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/junk.py" beforeDir="false" afterPath="$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/junk.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/segmentation.py" beforeDir="false" afterPath="$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/segmentation.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,33 +25,33 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Python Console" value="76" />
-          <entry key="dummy" value="156" />
-          <entry key="py" value="7445" />
+          <entry key="dummy" value="163" />
+          <entry key="py" value="8433" />
           <entry key="txt" value="48" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="204" />
-          <entry key="Python" value="7521" />
+          <entry key="PLAIN_TEXT" value="211" />
+          <entry key="Python" value="8509" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="out" value="1" />
-          <entry key="py" value="60" />
+          <entry key="py" value="62" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="60" />
+          <entry key="Python" value="62" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.4508887">
+    <splitter split-orientation="horizontal" split-proportion="0.5280636">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
           <file pinned="false" current-in-tab="false">
@@ -68,10 +69,11 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/segmentation.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="60">
-                  <caret line="113" column="57" lean-forward="true" selection-start-line="113" selection-start-column="57" selection-end-line="113" selection-end-column="57" />
+                <state relative-caret-position="955">
+                  <caret line="250" column="41" selection-start-line="250" selection-start-column="41" selection-end-line="250" selection-end-column="41" />
                   <folding>
                     <element signature="e#22#40#0" expanded="true" />
+                    <marker date="1536386900369" expanded="true" signature="8290:8328" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -171,8 +173,32 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/junk/check.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-65">
-                  <caret line="41" selection-start-line="41" selection-end-line="41" selection-end-column="49" />
+                <state relative-caret-position="-424">
+                  <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
+                  <folding>
+                    <element signature="e#452#470#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/junk/segWORKING.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="468">
+                  <caret line="57" column="25" selection-start-line="57" selection-start-column="25" selection-end-line="57" selection-end-column="25" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/junk.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1243">
+                  <caret line="100" selection-start-line="100" selection-end-line="100" />
+                  <folding>
+                    <element signature="e#0#13#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -235,12 +261,12 @@
         <option value="$PROJECT_DIR$/catkin_ws/src/scripts/pclproc.py" />
         <option value="$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/imagerecognition.py" />
         <option value="$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/pcl_helper.py" />
-        <option value="$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/junk.py" />
         <option value="$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/objectrecognition.py" />
         <option value="$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/check.py" />
         <option value="$PROJECT_DIR$/catkin_ws/src/scripts/segmentation.py" />
         <option value="$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/pclproc.py" />
         <option value="$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/capture_features.py" />
+        <option value="$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/junk.py" />
         <option value="$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/segmentation.py" />
       </list>
     </option>
@@ -648,7 +674,7 @@
       <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49906892" weight="0.24779283" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.7248603" visible="true" weight="0.21542084" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.7248603" visible="true" weight="0.21247792" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49953446" weight="0.3984697" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -684,16 +710,6 @@
           <url>file://$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/objectrecognition.py</url>
           <line>2</line>
           <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/segmentation.py</url>
-          <line>157</line>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/segmentation.py</url>
-          <line>129</line>
-          <option name="timeStamp" value="26" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -782,13 +798,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/catkin_ws3/nohup.out">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/junk.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="36" lean-forward="true" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Exercise-1/RANSAC.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -937,19 +946,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/junk/segWORKING.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="57" column="25" selection-start-line="57" selection-start-column="25" selection-end-line="57" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/junk.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1243">
+          <caret line="100" selection-start-line="100" selection-end-line="100" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/junk/check.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-65">
-          <caret line="41" selection-start-line="41" selection-end-line="41" selection-end-column="49" />
+        <state relative-caret-position="-424">
+          <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
+          <folding>
+            <element signature="e#452#470#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/catkin_ws3/src/sensor_stick/scripts/segmentation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="113" column="57" lean-forward="true" selection-start-line="113" selection-start-column="57" selection-end-line="113" selection-end-column="57" />
+        <state relative-caret-position="955">
+          <caret line="250" column="41" selection-start-line="250" selection-start-column="41" selection-end-line="250" selection-end-column="41" />
           <folding>
             <element signature="e#22#40#0" expanded="true" />
+            <marker date="1536386900369" expanded="true" signature="8290:8328" ph="..." />
           </folding>
         </state>
       </provider>

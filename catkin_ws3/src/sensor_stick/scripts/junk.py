@@ -42,3 +42,67 @@ def LoadFile_msgPCL(fileNameIn = "msgPCL.pypickle"):
     # Call the filter function to obtain the resultant downsampled point cloud
     pclpcVoxels = vox.filter()
     pclRecs.append((pclpcVoxels, "pclpcDownSampled"))
+
+
+objName = "Ind{}_{}".format(index, label)
+print(objName)
+dirNameOut = "./Assets/pcdClassifierOut/"
+pclRecs = [(pcl_cluster, objName)]
+# pclproc.SavePCLs(pclRecs, dirNameOut, useTimeStamp=True)
+
+
+#--------------------------------- Process_msgPCL()
+def Process_msgPCL(msgPCL):
+    global g_dumpCountTestmsgPCL
+    global g_dumpCountTestrawPCL
+
+    # DevDebug save msgPCL to file for debug
+    if (g_dumpCountTestmsgPCL > 0):
+        g_dumpCountTestmsgPCL -= 1
+        fileNameOut = g_testmsgPCLFilename + str(g_dumpCountTestmsgPCL)  + ".pypickle"
+        pickle.dump(msgPCL, open(fileNameOut, "wb"))
+
+    # Extract pcl Raw from Ros msgPCL
+    pclpcRawIn = pcl_helper.ros_to_pcl(msgPCL)
+
+    # DevDebug save rawPCL to file for debug
+    if (g_dumpCountTestrawPCL > 0):
+        g_dumpCountTestrawPCL -= 1
+        fileNameOut = g_testrawPCLFilename + str(g_dumpCountTestrawPCL)  + ".pypickle"
+        pickle.dump(pclpcRawIn, open(fileNameOut, "wb"))
+
+    #------- PROCESS RAW PCL-------------------------
+    labelRecs, pclpcObjects, pclpcTable, pclpcClusters = Process_rawPCL(pclpcRawIn)
+
+    # Package Processed pcls into Ros msgPCL
+    msgPCLObjects = pcl_helper.pcl_to_ros(pclpcObjects)
+    msgPCLTable = pcl_helper.pcl_to_ros(pclpcTable)
+    msgPCLClusters = pcl_helper.pcl_to_ros(pclpcClusters)
+
+    detected_objects_labels = []
+    detected_objects = []
+
+    for (labelText, labelPos, labelIndex) in labelRecs:
+        detected_objects_labels.append(labelText)
+        g_object_markers_pub.publish(marker_tools.make_label(labelText, labelPos, labelIndex ))
+        # Add  detected object to the list of detected objects.
+        do = DetectedObject()
+        do.label = labelText
+        do.cloud = pclpcClusters
+        detected_objects.append(do)
+
+    rospy.loginfo('Detected {} objects: {}'.format(len(detected_objects_labels), detected_objects_labels))
+
+    # Publish everything
+    # This is the output you'll need to complete the upcoming project!
+    g_detected_objects_pub.publish(detected_objects) # THIS IS THE CRUCIAL STEP FOR PROJ3
+
+    return msgPCLObjects, msgPCLTable, msgPCLClusters
+
+
+#--------------------------------- Test_Process_msgPCL()
+def Test_Process_msgPCL():
+    dumpIndex = 0
+    fileNameIn = g_testmsgPCLFilename + str(dumpIndex) + ".pypickle"
+    msgPCL = pickle.load( open(fileNameIn, "rb" ) )
+    msgPCLObjects, msgPCLTable, pclpcClusters = Process_msgPCL(msgPCL)
